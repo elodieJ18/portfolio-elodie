@@ -36,6 +36,7 @@ p, li {
 
 ul {
   list-style-type: none;
+  padding: 0;
 }
 
 a {
@@ -96,6 +97,46 @@ a {
 
 .title-formation {
   text-align: left;
+}
+
+.block-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container-block-langue {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+
+.jauge-background {
+  background-color: #9dd1c0;
+  width: 156px;
+  border-radius: 1.5em;
+}
+
+.jaune-over {
+  background-color: #e9505a;
+  height: 10px;
+  width: 60%;
+  border-radius: 1.5em;
+}
+
+.jaune-full {
+  background-color: #e9505a;
+  height: 10px;
+  width: 100%;
+  border-radius: 1.5em;
+}
+
+.list-qualite {
+  display: flex;
+  text-align: left;
+  column-gap: 20px;
 }
 
 @font-face {

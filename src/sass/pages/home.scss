@@ -1,3 +1,6 @@
+@import "../utils/mixin";
+@import "../utils/variables";
+
 @font-face {
     font-family: "Poppins", sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
@@ -44,6 +47,7 @@ p, li {
 
 ul {
   list-style-type: none;
+  padding: 0;
 }
 
 a {
@@ -63,9 +67,9 @@ a {
 
 .arrow-down-home {
   padding: 18px 13px 11px;
-  border: 1px solid #3f62ab;
+  border: 1px solid $first-color;
   border-radius: 2.5em;
-  background-color: #3f62ab;
+  background-color: $first-color;
 .icon-arrow-down-home {
   color: white !important;
     font-size: 28px;
@@ -108,4 +112,45 @@ a {
 
 .title-formation {
   text-align: left;
+}
+
+.block-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container-block-langue {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  column-gap: 20px;
+  
+}
+
+.jauge-background {
+  background-color: $third-color;
+    width: 156px;
+    border-radius: 1.5em;
+}
+
+.jaune-over {
+  background-color: $second-color;
+    height: 10px;
+    width: 60%;
+    border-radius: 1.5em;  
+}
+
+.jaune-full {
+  background-color: $second-color;
+    height: 10px;
+    width: 100%;
+    border-radius: 1.5em; 
+}
+
+.list-qualite {
+  display: flex;
+  text-align: left;
+  column-gap: 20px;
 }

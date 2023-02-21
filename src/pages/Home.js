@@ -98,6 +98,56 @@ function Home() {
                 </div>
               </div>
             </div> 
+
+            <div className='resume-right'>
+              <div className='block-right'>
+                <div className='block-langue'> 
+                  <div className='title-formation'>
+                    <h2>Langues</h2>
+                  </div>
+                  <div className='container-block-langue'>
+                    <p>Anglais</p>
+                    <div className='block-jauge'>
+                      <div className='title-jauge'>
+                        <p>Intermédiraire</p>
+                      </div>
+                      <div className='jauge-background'>
+                        <div className='jaune-over'></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='container-block-langue'>
+                    <p>Espagnol</p>
+                    <div className='block-jauge'>
+                      <div className='title-jauge'>
+                        <p>Bilingue </p>
+                      </div>
+                      <div className='jauge-background'>
+                        <div className='jaune-full'></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className='block-qualite'>
+                  <div className='title-formation'>
+                    <h2>Qualités</h2>
+                  </div>
+                  <div className='list-qualite'>
+                    <ul>
+                      <li>Impliquée</li>
+                      <li>Perséverante</li>
+                      <li>Dynamique</li>
+                    </ul>
+                    <ul>
+                      <li>Travail en équipe</li>
+                      <li>Force de proposition</li>
+                      <li>Adaptabilité</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
    </div>
