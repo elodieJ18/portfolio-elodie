@@ -21,13 +21,13 @@ export const Navbar = () => {
               <NavLink to="/">
                 <div className="navbar-element">
                   <p className="linkicon"></p>
-                  <p className="linkName">home</p>
+                  <p className="linkName">accueil</p>
                 </div>
               </NavLink>
               <a href="#create-comment">
                 <div className="navbar-element">
                   <p className="linkicon"></p>
-                  <p className="linkName">experience</p>
+                  <p className="linkName">experiences</p>
                 </div>
               </a>
               <NavLink  to="/mycomment">
