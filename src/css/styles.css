@@ -14,7 +14,7 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/src/assets/fond-bleu-plus-nav.png");
+  background-image: url("/src/assets/fond-background.png");
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
   -o-background-size: 100%;
@@ -64,7 +64,7 @@ a {
 }
 
 #experiences {
-  margin: 170px 0px 10px 0px;
+  margin: 170px 0px 100px 0px;
 }
 
 .title-experience-home {
@@ -96,7 +96,7 @@ a {
 .resume-left {
   width: 36%;
   padding-right: 30px;
-  margin-right: 30px;
+  margin-right: 20px;
   border-right: 1px solid #9dd1c0;
 }
 
@@ -114,6 +114,7 @@ a {
 
 .block-formation {
   display: flex;
+  margin-bottom: 14px;
 }
 .block-formation .date {
   display: flex;
@@ -144,18 +145,21 @@ a {
 }
 
 .title-formation {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .formation {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .block-right {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  row-gap: 40px;
+  align-items: center;
+  row-gap: 20px;
+}
+.block-right ul {
+  margin: 0;
 }
 
 .container-block-langue {
@@ -207,19 +211,25 @@ a {
   border-radius: 1.5em;
   row-gap: 10px;
   padding: 4px 12px;
+  font-weight: 400;
 }
 
 .list-competence-plus {
   background-color: #9dd1c0;
   border-radius: 1.5em;
-  padding: 0px 10px 3px 10px;
+  padding: 0px 16px 3px 16px;
+  font-weight: 400;
+  font-size: 28px;
 }
 
 .container-block-interet {
   display: flex;
   text-align: left;
-  column-gap: 26px;
+  column-gap: 12px;
   padding: 0px 20px;
+}
+.container-block-interet .subtitle-bold {
+  font-size: 1em;
 }
 
 .block-interet {
@@ -235,6 +245,32 @@ a {
 
 .block-list-competence ul {
   margin: 0px 0px 12px 0px;
+}
+
+.container-block-interet li, .container-block-interet p {
+  font-size: 12px;
+}
+
+/*Project*/
+.container-block-project {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column: 1;
+  row-gap: 20px;
+  column-gap: 20px;
+  margin: 100px;
+}
+.container-block-project .element-container-block-projet {
+  background-color: white;
+  box-shadow: -9px 4px 16px rgba(17, 17, 17, 0.4901960784);
+  padding: 30px;
+  border-radius: 1.5em;
+  text-align: left;
+}
+.container-block-project .element-container-block-projet img {
+  width: auto;
+  height: 113px;
+  overflow: hidden;
 }
 
 @font-face {

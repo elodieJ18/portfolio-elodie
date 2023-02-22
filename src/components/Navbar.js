@@ -33,7 +33,7 @@ export const Navbar = () => {
               <NavLink  to="/mycomment">
                 <div className="navbar-element">
                 <p className="linkicon"></p>
-                <p  className="linkName">project</p>
+                <p  className="linkName">projet</p>
                 </div>
               </NavLink>
               <NavLink  to="/mycomment">
