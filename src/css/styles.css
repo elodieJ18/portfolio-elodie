@@ -83,6 +83,7 @@ a {
   display: flex;
   justify-content: flex-end;
   margin-right: 140px;
+  align-items: stretch;
 }
 
 .subtitle-resume, .title-job-formation {
@@ -262,15 +263,80 @@ a {
 }
 .container-block-project .element-container-block-projet {
   background-color: white;
-  box-shadow: -9px 4px 16px rgba(17, 17, 17, 0.4901960784);
+  box-shadow: 1px 1px 11px rgba(17, 17, 17, 0.12);
   padding: 30px;
   border-radius: 1.5em;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 36px;
+  justify-content: space-between;
 }
 .container-block-project .element-container-block-projet img {
   width: auto;
   height: 113px;
   overflow: hidden;
+}
+
+.resume-card-contact-into, .resume-card-presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resume-card-presentation {
+  background-color: white;
+  padding: 28px 12px 0px 12px;
+  margin-right: 40px;
+  border-radius: 1.5em;
+  row-gap: 46px;
+  box-shadow: 1px 1px 11px rgba(17, 17, 17, 0.12);
+}
+.resume-card-presentation img {
+  width: 74%;
+}
+
+.resume-card-logo-titre {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.resume-card-logo-titre img {
+  width: 200px;
+}
+.resume-card-logo-titre p {
+  padding-top: 12px;
+  text-align: left;
+  line-height: 20px;
+}
+
+.resume-card-contact-into img {
+  width: 158px;
+}
+
+.resume-card-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 76px;
+}
+
+.block-projet-logo {
+  border-bottom: 1px solid;
+  width: 100%;
+  text-align: center;
+}
+
+.size-image-tw22 {
+  width: 60px !important;
+}
+
+.btn-voir-projet {
+  background-color: #3f62ab;
+  border-radius: 1.5em;
+  color: white;
+  padding: 10px 30px;
 }
 
 @font-face {

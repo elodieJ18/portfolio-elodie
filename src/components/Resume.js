@@ -1,4 +1,7 @@
 import React  from 'react';
+import logocv from "../assets/photo-cv.svg";
+import logocard from "../assets/logo-plus-petit.svg";
+import logocontact from "../assets/logo-contact.svg";
 
 
 export const Resume = () =>  {
@@ -7,6 +10,25 @@ export const Resume = () =>  {
           <h1>Experiences</h1>
         </div>
         <div className='resume'>
+          
+          <div className='resume-card-presentation'>
+            <img src={logocv} alt='photo-elodie-jean'/>
+            <div className='resume-card-logo-titre'>
+              <img src={logocard} alt='photo-elodie-jean'/>
+              <p>DEVELOPPEUR WEB <br/> Front-end</p>
+             
+            </div>
+            <div className='resume-card-contact-into'>
+              <img src={logocontact} />
+              <a href='mailto: elodie.jean18@gmail.com'>elodie.jean18@gmail.com</a>
+              <p>Paris, 75000</p>
+            </div>
+            <div className='resume-card-contact'>
+              <a href='https://www.linkedin.com/in/elodie-cjean/'>Linkedin</a>
+              <a href='https://www.linkedin.com/in/elodie-cjean/'>Github</a>
+            </div>
+          </div>
+          
           <div className='resume-left'>
             <div className='formation'>
               <div className='title-formation first-color'>
