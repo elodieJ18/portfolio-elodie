@@ -10,6 +10,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import Resume from '../components/Resume';
 
+import ResumeToggle from "../components/ResumeToggle"; 
+
 
 library.add(fas, faArrowDown);
 
@@ -26,7 +28,8 @@ function Home() {
             <a className='arrow-down-home' href='#experiences'><FontAwesomeIcon icon="fa-arrow-down" className='icon-arrow-down-home'/></a>
           </div>
         </div>
-        <Resume/>
+        <Resume className="resume"/>
+        <ResumeToggle/>
         <Projet />
         <div id='form'> 
           <div className='title-form'>

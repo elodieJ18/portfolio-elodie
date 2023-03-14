@@ -395,6 +395,14 @@ img{
   width: 100%;
 }
 
+.resume-toggle-mobile {
+  display: none;
+}
+
+.resume-desk {
+  display: block;
+}
+
 @media (max-width: 720px) {
   .container-block-project {
       display: grid;
@@ -468,6 +476,14 @@ img{
 
 #experiences {
   margin: 170px 0px 27px 0px;
+}
+
+.resume-toggle-mobile {
+  display: block;
+}
+
+.resume-desk {
+  display: none;
 }
 
 }

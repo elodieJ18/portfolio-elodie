@@ -1,22 +1,22 @@
 import React  from 'react';
 import logocv from "../assets/photo-cv.svg";
 import logocard from "../assets/logo-plus-petit.svg";
-import logocontact from "../assets/logo-contact.svg";
-
+import logocontact from "../assets/logo-contact.svg"; 
 
 export const Resume = () =>  {
-        return (         <div id="experiences">
+
+        return (   
+        <div className="resume-desk">    
+        <div id="experiences">
         <div className='title-experience-home'>
           <h1>Experiences</h1>
         </div>
         <div className='resume'>
-          
           <div className='resume-card-presentation'>
             <img src={logocv} alt='elodie-jean'/>
             <div className='resume-card-logo-titre'>
               <img src={logocard} alt='elodie-jean'/>
               <p>DEVELOPPEUR WEB <br/> Front-end</p>
-             
             </div>
             <div className='resume-card-contact-into'>
               <img src={logocontact} alt='contact-elodie-jean' />
@@ -28,7 +28,6 @@ export const Resume = () =>  {
               <a href='https://www.linkedin.com/in/elodie-cjean/'>Github</a>
             </div>
           </div>
-          
           <div className='resume-left'>
             <div className='formation'>
               <div className='title-formation first-color'>
@@ -100,12 +99,11 @@ export const Resume = () =>  {
                     <ul>
                       <li>exécution cartes de visite, bannière web, Identité d’agence d’architecture</li>
                     </ul>
-                  
                   </div>
               </div>
             </div>
           </div> 
-
+          
           <div className='resume-right'>
             <div className='block-right'>
               <div className='block-langue'> 
@@ -219,6 +217,7 @@ export const Resume = () =>  {
           </div>
         </div>
   </div>
+  </div>  
    );
 }
 
