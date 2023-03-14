@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "../css/styles.css";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-plus-petit.svg";
 
 
 
@@ -46,6 +46,17 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
+      <ul className="menuMobile">
+      <li><a className="menuItems navbar-brand logo-image" href="index.html"><img src="" alt="Qhare"/></a></li>
+      <li><a className="menuItems" href="#header">Accueil</a></li>
+      <li><a className="menuItems" href="#fonctionality">Fonctionnalités</a></li>
+      <li><a className="menuItems btn-outline-full btn-outline-sm" href="#contact">Demander une démonstration</a></li>
+      <li><a className="menuItems btn-outline-empty btn-outline-sm" href="https://qhare.fr/connexion">Se connecter</a></li>
+      </ul> 
+      <button href="#" class="hamburger">
+        <i className="fas fa-bars menuIcon"></i>
+        <i className="fas fa-times closeIcon"></i>
+      </button>
     </div>
   );
 }

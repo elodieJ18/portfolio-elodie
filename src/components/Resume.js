@@ -12,14 +12,14 @@ export const Resume = () =>  {
         <div className='resume'>
           
           <div className='resume-card-presentation'>
-            <img src={logocv} alt='photo-elodie-jean'/>
+            <img src={logocv} alt='elodie-jean'/>
             <div className='resume-card-logo-titre'>
-              <img src={logocard} alt='photo-elodie-jean'/>
+              <img src={logocard} alt='elodie-jean'/>
               <p>DEVELOPPEUR WEB <br/> Front-end</p>
              
             </div>
             <div className='resume-card-contact-into'>
-              <img src={logocontact} />
+              <img src={logocontact} alt='contact-elodie-jean' />
               <a href='mailto: elodie.jean18@gmail.com'>elodie.jean18@gmail.com</a>
               <p>Paris, 75000</p>
             </div>

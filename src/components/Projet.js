@@ -13,72 +13,82 @@ export const Projet = () =>  {
                             </div>
                             <div className='block-project'>
                                 <div className='container-block-project'>
+                                        <div className='element-container-block-projet'>
+                                            <div className='info-projet'>
+                                                <div className='block-projet-logo'>  
+                                                    <img src={logogroupomania} alt="Logo Groupomania"/>
+                                                </div> 
+                                            
+                                                <div className='info-element-container-block-projet'>
+                                                    <h2 className='title-projet'>Groupomania</h2>
+                                                    <p><strong>Techno front :</strong> React.js/redux</p>
+                                                    <p><strong>Techno back :</strong> MySQL/sequelize</p>
+                                                    <p><strong>Quelques mots :</strong> Project Fullstack / Réseau Social d'entreprise</p>
+                                                </div> 
+                                            </div>
+                                            <div className='btn-projet'>
+                                                <a href='#' className='btn-voir-projet' target="_blank">VOIR LE PROJET</a>
+                                            </div>
+                                        </div>
                                     <div className='element-container-block-projet'>
-                                     <div className='block-projet-logo'>  
-                                        <img src={logogroupomania} alt="Logo Groupomania"/>
-                                    </div> 
-                                    <div className='info-element-container-block-projet'>
-                                        <h2 className='title-projet'>Groupomania</h2>
-                                        <p>Techno front: React.js/redux</p>
-                                        <p>Techno back: MySQL/sequelize</p>
-                                        <p>Quelques mots: Project Fullstack / Réseau Social d'entreprise</p>
-                                    </div>
-                                    <div>
-                                        <a href='#' className='btn-voir-projet' target="_blank">VOIR LE PROJET</a>
-                                    </div>
-                                    </div>
-                                    <div className='element-container-block-projet'>
+                                     <div className='info-projet'>
                                         <div className='block-projet-logo'> 
                                             <img src={logotwstudio} className="size-image-tw22" alt="Logo Tw22Studio"/>
                                         </div>
                                         <div className='info-element-container-block-projet'>
                                             <h2 className='title-projet'>Tw22Studio</h2>
-                                            <p>Techno front: Fromscratch (html/scss/js)</p>
-                                            <p>Quelques mots: Colaboration avec Tw22Studio/ création du site d'après maquette figma</p>
+                                            <p><strong>Techno front :</strong> Fromscratch (html/scss/js)</p>
+                                            <p><strong>Quelques mots :</strong> Colaboration avec Tw22Studio/ création du site d'après maquette figma</p>
                                         </div>
-                                        <div>
+                                    </div>
+                                        <div className='btn-projet'>
                                             <a href='https://tw22studio.com/' className='btn-voir-projet' target="_blank">VOIR LE PROJET</a>
                                         </div>
                                     </div>
                                     <div className='element-container-block-projet'>
+                                      <div className='info-projet'>
                                         <div className='block-projet-logo'> 
                                             <img src={logoecofi} alt="Logo Ecofi"/>
                                         </div>
                                         <div className='info-element-container-block-projet'>
                                             <h2 className='title-projet'>Ecofi</h2>
-                                            <p>CMS: Drupal</p>
-                                            <p>Quelques mots: Intégration + animation JS</p>
+                                            <p><strong>CMS :</strong> Drupal</p>
+                                            <p><strong>Quelques mots :</strong> Intégration + animation JS </p>
                                         </div>
-                                        <div>
+                                      </div>
+                                        <div className='btn-projet'>
                                             <a href='https://www.ecofi.fr/' className='btn-voir-projet' target="_blank">VOIR LE PROJET</a>
                                         </div>
                                     </div>
                                     <div className='element-container-block-projet'>
+                                      <div className='info-projet'>
                                         <div className='block-projet-logo'> 
                                             <img src={logoqhare} alt="Logo Ecofi"/>
                                         </div>
                                         <div className='info-element-container-block-projet'>
                                             <h2 className='title-projet'>Qhare CRM</h2>
-                                            <p>Techno: Fromscratch (html/css)</p>
-                                            <p>Quelques mots: Création d'une onepage Fromscratch</p>
+                                            <p><strong>Techno :</strong> Fromscratch (html/css)</p>
+                                            <p><strong>Quelques mots :</strong> Création d'une onepage Fromscratch</p>
                                         </div>
-                                        
-                                        <div>
+                                      </div> 
+                                        <div className='btn-projet'>
                                             <a href='https://www.crm-qhare.fr/' className='btn-voir-projet' target="_blank">VOIR LE PROJET</a>
                                         </div>
                                     </div>
                                     <div className='element-container-block-projet'>
+                                     <div className='info-projet'>
                                         <div className='block-projet-logo'>
                                             <img src={logoohmyfood} alt="Logo Ecofi"/>
                                         </div>
                                         <div className='info-element-container-block-projet'>
                                             <h2 className='title-projet'>OhMyFood</h2>
-                                            <p>Techno: Fromscratch (html/css/scss)</p>
-                                            <p>Quelques mots: Début de création d'un site commande en ligne et de livraison de repas</p>
+                                            <p><strong>Techno :</strong> Fromscratch (html/css/scss)</p>
+                                            <p><strong>Quelques mots :</strong> Début de création d'un site commande en ligne et de livraison de repas</p>
                                             <p>Apprentissage d'animation fluide et moderne</p>
                                         </div>
-                                        <div>
-                                            <a href='https://elodiej18.github.io/ElodieJean_3_04122021/a_la_francaise.html' className='btn-voir-projet' target="_blank">VOIR LE PROJET</a>
+                                      </div>  
+                                        <div className='btn-projet'>
+                                            <a href='https://elodiej18.github.io/ElodieJean_3_04122021/index.html' className='btn-voir-projet' target="_blank">VOIR LE PROJET</a>
                                         </div>
                                     </div>
                                 </div>

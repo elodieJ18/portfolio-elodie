@@ -40,3 +40,76 @@
     width: 160px;
 }
 
+@media (max-width: 720px) {
+    .header {
+        padding: 11px 9px;
+    }
+    .menuMobile {
+        display: none;
+      }
+      
+      button.hamburger {
+        display: none;
+      }
+      
+      .navbar {
+        background-color: #ffffff;
+        font-weight: 600;
+        font-size: 0.875rem;
+        line-height: 0.875rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      
+      .navbar-menu-mobile {
+        display: none;
+      }
+      
+      .navbar-brand {
+        margin-right: 1rem;
+      }
+      
+      .navbar-brand img {
+        height: 10%;
+        width: 75%;
+      }
+      
+      .navbar-menu {
+        display: flex;
+        align-items: center;
+      }
+      
+      .navbar-menu-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .navbar-menu-element,
+      .nav-link {
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 600;
+      }
+      
+      .navbar-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: auto;
+        margin-left: auto;
+        width: 80%;
+      }
+      
+      .fixed-top {
+        position: fixed;
+        box-shadow: 0px 0px 5px 0px rgb(153 152 152);
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1;
+      }
+      
+}
+

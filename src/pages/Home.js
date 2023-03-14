@@ -2,6 +2,8 @@
 import React  from 'react';
 import {Navbar} from "../components/Navbar";
 import {Projet} from "../components/Projet";
+import {Form} from "../components/Form";
+import {Footer} from "../components/Footer";
 import titrePortfolio from "../assets/titre-portfolio.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -26,7 +28,14 @@ function Home() {
         </div>
         <Resume/>
         <Projet />
-        
+        <div id='form'> 
+          <div className='title-form'>
+                                <h1>Contact</h1>
+                          
+            <Form/>  
+          </div>
+        </div>
+        <Footer/>
    </div>
  
   );
