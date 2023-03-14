@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9518c920.css",
+    "main.js": "/static/js/main.2f8041e6.js",
+    "static/js/787.bbe52291.chunk.js": "/static/js/787.bbe52291.chunk.js",
+    "static/media/logo-contact.svg": "/static/media/logo-contact.d32520909f9d7ce6d422c7bd88b30782.svg",
+    "static/media/logo-ohmyfood.svg": "/static/media/logo-ohmyfood.3c5eefd601c8181c84d6c870019f1cb5.svg",
+    "static/media/logo-qhare.svg": "/static/media/logo-qhare.12070be4dc2c756ab580af0739dd366b.svg",
+    "static/media/logo-groupomania.svg": "/static/media/logo-groupomania.cb53f4a2580c565678b64ad97db604dc.svg",
+    "static/media/logo-ecofi.svg": "/static/media/logo-ecofi.e5f4ba1e350e06a73d21fc9744054a62.svg",
+    "static/media/photo-cv.svg": "/static/media/photo-cv.c7b32cdebb8d987f115dc477cb34c36b.svg",
+    "static/media/titre-portfolio.png": "/static/media/titre-portfolio.fb573a4a242734dbec02.png",
+    "static/media/logo-plus-petit.svg": "/static/media/logo-plus-petit.2b38d2f56e78100f1c64305cb8e94da9.svg",
+    "static/media/logo-github.svg": "/static/media/logo-github.8f1479a971c3ba54d062b4411eebce06.svg",
+    "static/media/logo-linkedin.svg": "/static/media/logo-linkedin.27328e62948e212a30a2c40264270135.svg",
+    "static/media/block-contact.svg": "/static/media/block-contact.02f99c16579751d047a2.svg",
+    "static/media/block-contact-mobile.svg": "/static/media/block-contact-mobile.aed5ecc6beea9144b0c9.svg",
+    "static/media/fond-background.svg": "/static/media/fond-background.084d6a7bfc5c1d413b52.svg",
+    "static/media/logo-tw22studio.svg": "/static/media/logo-tw22studio.72dc4defa2844e13e683e401adfb8308.svg",
+    "index.html": "/index.html",
+    "main.9518c920.css.map": "/static/css/main.9518c920.css.map",
+    "main.2f8041e6.js.map": "/static/js/main.2f8041e6.js.map",
+    "787.bbe52291.chunk.js.map": "/static/js/787.bbe52291.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9518c920.css",
+    "static/js/main.2f8041e6.js"
+  ]
+}
