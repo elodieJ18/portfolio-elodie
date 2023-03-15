@@ -1,5 +1,5 @@
 footer {
-    background-image: url("/src/assets/footer.svg");
+    background-color: #e9505a;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
@@ -18,10 +18,13 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 47px;
+    row-gap: 16px;
+    padding-top: 20px;
 
     p{
         color: white;
+        font-weight: 100;
+        font-size: 14px;
     }
 }
 
@@ -33,7 +36,8 @@ footer {
     flex-direction: row;
 
     p{
-        color: black;
+        color: white;
+        font-weight: 400;
     }
 
 }
@@ -48,4 +52,10 @@ footer {
     width: 46px;
 
     }
+
+   
+} 
+
+@media (max-width: 720px) { 
+
 }
