@@ -28,7 +28,7 @@ function Home() {
             <a className='arrow-down-home' href='#experiences'><FontAwesomeIcon icon="fa-arrow-down" className='icon-arrow-down-home'/></a>
           </div>
         </div>
-        <Resume className="resume"/>
+        <Resume/>
         <ResumeToggle/>
         <Projet />
         <div id='form'> 

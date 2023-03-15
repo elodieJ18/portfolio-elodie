@@ -380,7 +380,17 @@ strong {
   display: block;
 }
 
+#menu-burger {
+  display: none;
+}
+
 @media (max-width: 720px) {
+  #menu-burger {
+    display: block;
+  }
+  h1 {
+    font-size: 26px;
+  }
   .container-block-project {
     display: grid;
     grid-template-columns: 1fr;
@@ -396,6 +406,10 @@ strong {
   .resume-card-contact {
     margin-top: 0px;
     padding-bottom: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 9px;
   }
   .resume {
     display: flex;
@@ -408,10 +422,12 @@ strong {
     border-right: none;
   }
   .resume-card-presentation {
-    margin-right: 15px;
-    margin-left: 15px;
-    margin-bottom: 40px;
-    row-gap: 20px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    row-gap: 10px;
+    display: flex;
+    flex-direction: column;
   }
   .info-projet {
     padding: 17px 0px 0px 0px;
@@ -419,19 +435,17 @@ strong {
   }
   .block-formation {
     display: flex;
-    width: 281px;
-    margin-left: 10px;
+    width: 250px;
+    margin-left: 24px;
     flex-direction: column;
-    background-color: white;
-    box-shadow: 1px 1px 11px rgba(17, 17, 17, 0.12);
     border-radius: 1.5em;
     padding: 10px;
   }
   .formation {
     width: 320px;
   }
-  .block-interet {
-    width: 90%;
+  .block-langue {
+    padding-bottom: 20px;
   }
   .resume-left .date {
     display: flex;
@@ -442,10 +456,83 @@ strong {
     margin: 170px 0px 27px 0px;
   }
   .resume-toggle-mobile {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: 10px;
+    margin-top: 50px;
+    padding: 20px 20px 40px 20px;
+  }
+  .resume-toggle-mobile button {
+    margin: 0;
+    font-family: "Kanit", sans-serif;
+    color: white;
+    border: none;
+    border-radius: 1.5em;
+    padding: 10px 28px 10px 28px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .blue-background {
+    background-color: #3f62ab;
+  }
+  .red-background {
+    background-color: #e9505a;
+  }
+  .green-background {
+    background-color: #9dd1c0;
   }
   .resume-desk {
     display: none;
+  }
+  .resume-card-logo-titre img {
+    width: 95px;
+  }
+  .resume-card-contact-into p, .resume-card-contact-into a {
+    font-size: 13px;
+  }
+  .resume-card-contact-into img {
+    width: 95px;
+  }
+  .container-block-langue {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
+  }
+  .subtitle-resume {
+    width: max-content;
+  }
+  .title-job-formation {
+    text-align: left;
+  }
+  .aboutformation p {
+    text-align: start;
+  }
+  .resume-card-logo-info-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+    margin: 0px;
+  }
+  .resume-card-presentation img {
+    width: 94px;
+  }
+  .title-experience-home {
+    margin-bottom: 10px;
+  }
+  .resume-card-logo-titre p {
+    padding-top: 2px;
+    text-align: left;
+    line-height: 11px;
+    font-size: 13px;
+  }
+  .list-qualite {
+    display: flex;
+    text-align: left;
+    column-gap: 20px;
+    justify-content: space-around;
   }
 }
 #form {

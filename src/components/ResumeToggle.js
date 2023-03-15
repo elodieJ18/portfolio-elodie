@@ -18,28 +18,40 @@ export const ResumeToggle = () =>  {
         const [toggleThird, setToggleThird] = useToggle();
         const [toggleFourth, setToggleFourth] = useToggle();
         const [toggleFith, setToggleFith] = useToggle();
+        const [toggleSixth, setToggleSixth] = useToggle();
 
         return (        
           <div className="resume-toggle-mobile">
+            <div className='title-experience-home'>
+              <h1>Experiences</h1>
+            </div>
             <div className='resume-card-presentation'>
-            <img src={logocv} alt='elodie-jean'/>
-            <div className='resume-card-logo-titre'>
-              <img src={logocard} alt='elodie-jean'/>
-              <p>DEVELOPPEUR WEB <br/> Front-end</p>
-            </div>
-            <div className='resume-card-contact-into'>
-              <img src={logocontact} alt='contact-elodie-jean' />
-              <a href='mailto: elodie.jean18@gmail.com'>elodie.jean18@gmail.com</a>
-              <p>Paris, 75000</p>
-            </div>
+              <div className='resume-card-logo-info-mobile'>
+                  <img src={logocv} alt='elodie-jean'/>
+                  <div className='resume-card-presentation-mobile'>
+                        <div className='resume-card-logo-titre'>
+                          <img src={logocard} alt='elodie-jean'/>
+                          <p>DEVELOPPEUR WEB <br/> Front-end</p>
+                        </div>
+                    </div>   
+                  </div>
+                        <div className='resume-card-contact-into'>
+                          <img src={logocontact} alt='contact-elodie-jean' />
+                          <a href='mailto: elodie.jean18@gmail.com'>elodie.jean18@gmail.com</a>
+                          <p>Paris, 75000</p>
+                        </div>
+                  
+           
             <div className='resume-card-contact'>
               <a href='https://www.linkedin.com/in/elodie-cjean/'>Linkedin</a>
               <a href='https://www.linkedin.com/in/elodie-cjean/'>Github</a>
             </div>
           </div>
-          <button onClick={setToggle}  className="btn btn-secondary mb-5 title-formation first-color">
-              Formation
+          <button onClick={setToggle}  className="btn btn-secondary mb-5 title-formation blue-background">
+              <div className='title'>Formation</div> 
+              <div className='plus-minus'>{toggle ? '-' : '+'}</div>
           </button>
+         
           {toggle && (
              <div className='formation'>
              <div className='block-formation'>
@@ -72,9 +84,10 @@ export const ResumeToggle = () =>  {
              </div>
            </div> 
           )}
-          <button onClick={setToggleSecond}  className="btn btn-secondary mb-5 title-formation second-color">
+          <button onClick={setToggleSecond}  className="btn btn-secondary mb-5 title-formation red-background">
           Expériences Professionnelles
           </button>
+         
           {toggleSecond && (
             <div className='formation'>
             <div className='block-formation'>
@@ -114,7 +127,7 @@ export const ResumeToggle = () =>  {
             </div>
           </div>
           )}
-           <button onClick={setToggleThird}  className="btn btn-secondary mb-5 title-formation first-color">
+           <button onClick={setToggleThird}  className="btn btn-secondary mb-5 title-formation blue-background">
            Langues
           </button>
           {toggleThird && (
@@ -143,7 +156,7 @@ export const ResumeToggle = () =>  {
             </div>
           </div>
           )}
-          <button onClick={setToggleFourth}  className="btn btn-secondary mb-5 title-formation first-color">
+          <button onClick={setToggleFourth}  className="btn btn-secondary mb-5 title-formation blue-background">
            Qualités
           </button>
           {toggleFourth && (
@@ -162,7 +175,7 @@ export const ResumeToggle = () =>  {
               </div>
           </div>
           )}
-          <button onClick={setToggleFith}  className="btn btn-secondary mb-5 title-formation first-color">
+          <button onClick={setToggleFith}  className="btn btn-secondary mb-5 title-formation blue-background">
           Compétences
           </button>
           {toggleFith && (
@@ -184,6 +197,53 @@ export const ResumeToggle = () =>  {
                </ul>
              </div>
            </div>
+          )}
+          <button onClick={setToggleSixth}  className="btn btn-secondary mb-5 title-formation green-background">
+          Centres d'intérêt
+          </button>
+          {toggleSixth && (
+            <div className='block-interet'>
+              <div className='title-formation'>
+                <h2>Centres d'intérêt</h2>
+              </div>
+            <div className='container-block-interet'>
+                <div className='list-interet'>
+                  <div className='block-list-competence'>
+                    <h3 className='subtitle-bold'>Cinéma</h3>
+                    <ul>
+                      <li>Phantom of the paradise</li>
+                      <li>Au revoir là-haut</li>
+                      <li>Planète Sauvage</li>
+                      <li>5ème Element</li>
+                    </ul>
+                  </div>
+                  <div className='block-list-competence'>
+                    <h3 className='subtitle-bold'>Illustration</h3>
+                      <p>Illustration sur carnet,</p><p> Felix Colgrave</p>
+                  </div>
+                </div>
+                <div className='list-compétence'>
+                  <div className='block-list-competence'>
+                    <h3 className='subtitle-bold'>Photographie/video</h3>
+                    <ul>
+                      <li>Montage video/photo</li>
+                    </ul>
+                  </div>
+                  <div className='block-list-competence'>
+                    <h3 className='subtitle-bold'>Animation</h3>
+                    <ul>
+                      <li>GIF, animation par frame 2D</li>
+                    </ul>
+                  </div>
+                  <div className='block-list-competence'>
+                    <h3 className='subtitle-bold'>Activités</h3>
+                    <ul>
+                      <li>Ping Pong, Rugby, E-sport</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+          </div>
           )}
         </div>
   

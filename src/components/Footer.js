@@ -19,6 +19,7 @@ export const Footer = () => {
         
         </div>
         <p>Fait via React by Elodie Jean</p>
+        <a href='mailto: elodie.jean18@gmail.com'>elodie.jean18@gmail.com</a>
     </div>
    </footer>
   );
