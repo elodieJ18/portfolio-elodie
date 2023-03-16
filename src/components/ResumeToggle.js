@@ -49,7 +49,7 @@ export const ResumeToggle = () =>  {
           </div>
           <button onClick={setToggle}  className="btn btn-secondary mb-5 title-formation blue-background">
               <div className='title'>Formation</div> 
-              <div className='plus-minus'>{toggle ? '-' : '+'}</div>
+              <div className={toggle ? 'plus-minus' : 'plus-minus collapsed'}></div>
           </button>
          
           {toggle && (
@@ -85,7 +85,8 @@ export const ResumeToggle = () =>  {
            </div> 
           )}
           <button onClick={setToggleSecond}  className="btn btn-secondary mb-5 title-formation red-background">
-          Expériences Professionnelles
+            <div className='title'>Expériences Professionnelles</div> 
+            <div className={toggleSecond ? 'plus-minus' : 'plus-minus collapsed'}></div>
           </button>
          
           {toggleSecond && (
@@ -128,7 +129,8 @@ export const ResumeToggle = () =>  {
           </div>
           )}
            <button onClick={setToggleThird}  className="btn btn-secondary mb-5 title-formation blue-background">
-           Langues
+            <div className='title'>Langues</div> 
+            <div className={toggleThird ? 'plus-minus' : 'plus-minus collapsed'}></div>
           </button>
           {toggleThird && (
             <div className='block-langue'> 
@@ -156,8 +158,9 @@ export const ResumeToggle = () =>  {
             </div>
           </div>
           )}
-          <button onClick={setToggleFourth}  className="btn btn-secondary mb-5 title-formation blue-background">
-           Qualités
+          <button onClick={setToggleFourth}  className="btn btn-secondary mb-5 title-formation blue-background"> 
+            <div className='title'>Qualités</div> 
+            <div className={toggleFourth ? 'plus-minus' : 'plus-minus collapsed'}></div>
           </button>
           {toggleFourth && (
             <div className='block-qualite'>
@@ -176,7 +179,8 @@ export const ResumeToggle = () =>  {
           </div>
           )}
           <button onClick={setToggleFith}  className="btn btn-secondary mb-5 title-formation blue-background">
-          Compétences
+            <div className='title'>Compétences</div> 
+            <div className={toggleFith ? 'plus-minus' : 'plus-minus collapsed'}></div>
           </button>
           {toggleFith && (
              <div className='block-competence'>
@@ -199,7 +203,8 @@ export const ResumeToggle = () =>  {
            </div>
           )}
           <button onClick={setToggleSixth}  className="btn btn-secondary mb-5 title-formation green-background">
-          Centres d'intérêt
+            <div className='title'>Centres d'intérêt</div> 
+            <div className={toggleSixth ? 'plus-minus' : 'plus-minus collapsed'}></div>
           </button>
           {toggleSixth && (
             <div className='block-interet'>

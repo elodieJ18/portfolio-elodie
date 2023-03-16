@@ -18,8 +18,11 @@ export const Footer = () => {
             </a>
         
         </div>
-        <p>Fait via React by Elodie Jean</p>
-        <a href='mailto: elodie.jean18@gmail.com'>elodie.jean18@gmail.com</a>
+        <div className='info-creation'>
+            <p>Fait via React by Elodie Jean</p>
+            <a href='mailto: elodie.jean18@gmail.com'>elodie.jean18@gmail.com</a>
+        </div>
+        
     </div>
    </footer>
   );

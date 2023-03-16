@@ -534,6 +534,31 @@ strong {
     column-gap: 20px;
     justify-content: space-around;
   }
+  .plus-minus {
+    cursor: pointer;
+    height: 21px;
+    position: relative;
+    width: 21px;
+  }
+  .plus-minus:before, .plus-minus:after {
+    background: white;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 8px;
+    width: 21px;
+    transition: transform 500ms ease;
+  }
+  .plus-minus:after {
+    transform-origin: center;
+  }
+  .collapsed:after {
+    transform: rotate(90deg);
+  }
+  .collapsed:before {
+    transform: rotate(180deg);
+  }
 }
 #form {
   background-image: url("/src/assets/block-contact.svg");
@@ -631,7 +656,6 @@ footer {
   background-size: 100%;
   background-repeat: no-repeat;
   background-repeat: no-repeat;
-  height: 142px;
 }
 footer ul {
   margin: 0;

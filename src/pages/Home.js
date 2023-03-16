@@ -8,8 +8,7 @@ import titrePortfolio from "../assets/titre-portfolio.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas, faArrowDown } from '@fortawesome/free-solid-svg-icons';
-import Resume from '../components/Resume';
-
+import Resume from '../components/Resume'; 
 import ResumeToggle from "../components/ResumeToggle"; 
 
 
@@ -38,7 +37,7 @@ function Home() {
             <Form/>  
           </div>
         </div>
-        <Footer/>
+        <Footer/> 
    </div>
  
   );

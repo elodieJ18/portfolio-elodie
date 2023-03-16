@@ -407,6 +407,7 @@ img{
   display: none;
 }
 
+
 @media (max-width: 720px) {
   #menu-burger {
     display: block;
@@ -588,6 +589,37 @@ img{
   text-align: left;
   column-gap: 20px;
   justify-content: space-around;
+}
+
+
+.plus-minus {
+  cursor: pointer;
+  height: 21px;
+  position: relative;
+  width: 21px;
+  &:before,
+  &:after{
+    background: white;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 8px;
+    width: 21px;
+    transition: transform 500ms ease;
+  }
+  &:after {
+    transform-origin: center;
+  }
+}
+
+.collapsed{
+  &:after {
+    transform: rotate(90deg);
+  }
+  &:before {
+    transform: rotate(180deg);
+  }
 }
 
 }
