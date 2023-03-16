@@ -20,7 +20,8 @@ export const ResumeToggle = () =>  {
         const [toggleFith, setToggleFith] = useToggle();
         const [toggleSixth, setToggleSixth] = useToggle();
 
-        return (        
+        return (  
+          <div id="experiences">     
           <div className="resume-toggle-mobile">
             <div className='title-experience-home'>
               <h1>Experiences</h1>
@@ -251,6 +252,7 @@ export const ResumeToggle = () =>  {
           </div>
           )}
         </div>
+        </div> 
   
   );
 }
