@@ -21,7 +21,7 @@ export const ResumeToggle = () =>  {
         const [toggleSixth, setToggleSixth] = useToggle();
 
         return (  
-          <div id="experiences">     
+          <div>     
           <div className="resume-toggle-mobile">
             <div className='title-experience-home'>
               <h1>Experiences</h1>
@@ -52,7 +52,6 @@ export const ResumeToggle = () =>  {
               <div className='title'>Formation</div> 
               <div className={toggle ? 'plus-minus' : 'plus-minus collapsed'}></div>
           </button>
-         
           {toggle && (
              <div className='formation'>
              <div className='block-formation'>

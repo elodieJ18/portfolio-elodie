@@ -28,6 +28,7 @@ function Home() {
           </div>
         </div>
         <Resume/>
+        <div id="exp"></div>
         <ResumeToggle/>
         <Projet />
         <div id='form'> 

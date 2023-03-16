@@ -20,33 +20,22 @@ export default props => {
     <div id='menu-burger'>
       <Menu right  isOpen={menuOpen}
         onStateChange={state => handleStateChange(state)}>
-         <Link  to="/" onClick={() => {
+         <Link className="menu-item"  to="/" onClick={() => {
             closeMenu()
           }}>
-          <p className="menu-item">
             accueil
-          </p>
         </ Link>
-        <Link  to="/#experiences"  onClick={() => {
+        <Link  className="menu-item" to="/#exp"  onClick={() => {
             closeMenu()
-          }}>
-            <p className="menu-item">
-              experiences
-            </p>
+          }}>  experiences
         </Link>
-        <Link  to="/#project" onClick={() => {
+        <Link className="menu-item" to="/#project" onClick={() => {
             closeMenu()
-          }}>
-           <p className="menu-item">
-            projet
-            </p>
+          }}> projet
         </Link>
-        <Link  to="/#form" onClick={() => {
+        <Link className="menu-item" to="/#form" onClick={() => {
             closeMenu()
-          }}>
-            <p className="menu-item">
-              contact
-            </p>
+          }}> contact
         </Link>
       </Menu>
     </div>
