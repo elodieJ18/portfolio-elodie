@@ -10,6 +10,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import Resume from '../components/Resume'; 
 import ResumeToggle from "../components/ResumeToggle"; 
+import Burger from '../components/Burger';
 
 
 library.add(fas, faArrowDown);
@@ -20,18 +21,22 @@ function Home() {
    <div>
         <div id="home"> 
           <Navbar />
+          <Burger pageWrapId={'navbar-container'} outerContainerId={'navbar'}/>
           <div className="home-container">
                 <img className="titrePortfolio" src={titrePortfolio} alt="Portfolio Elodie Jean" />
           </div> 
           <div className='arrow-next-on-home'>
-            <a className='arrow-down-home' href='#experiences'><FontAwesomeIcon icon="fa-arrow-down" className='icon-arrow-down-home'/></a>
+            <a className='arrow-down-home' href='#exp'><FontAwesomeIcon icon="fa-arrow-down" className='icon-arrow-down-home'/></a>
           </div>
-        </div>
+        </div> 
+        <div id="exp">
         <Resume/>
-        <div id="exp"></div>
         <ResumeToggle/>
+        </div>
+        <div id="project">
         <Projet />
-        <div id='form'> 
+        </div>
+        <div id="form"> 
           <div className='title-form'>
                                 <h1>Contact</h1>
                           

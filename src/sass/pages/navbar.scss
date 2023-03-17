@@ -5,7 +5,8 @@
 
 
 .header {
-    padding: 25px 45px;
+  position: fixed;
+  width: 100%;
     p {
         color: black;
         font-size: 17px;
@@ -13,13 +14,15 @@
 }
 
 .header-content {
-   display: flex; 
-   justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 45px;
    .logo-navbar{
     margin-left: 3em;
    }
-
 }
+
 #navbar-container {
     display: flex;
     margin-right: 3em;
@@ -28,7 +31,7 @@
         border: 1px solid;
         border-color: black;
         border-radius: 0.5em;
-        padding: 2px 13px 5px 13px;
+        padding: 2px 13px 2px 13px;
     }
    
     .linkName {
@@ -40,11 +43,143 @@
     width: 160px;
 }
 
-Menu {
-  display: none;
-}
+ 
 .navbar-container {
   display: block;
+}
+
+.header.fixed {
+  position: fixed;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+  backdrop-filter: blur(10px);
+}
+
+.header-content-mobile {
+  display: none;
+}
+
+@media (min-width: 720px) and (max-width: 1280px) {
+
+  #menu-burger {
+    display: block;
+}
+
+.header-content {
+  display: none;
+}
+
+.header-content-mobile .logo-navbar {
+  margin-left: 0em;
+  padding-top: 6px;
+}
+
+.header-content-mobile {
+  display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 5px 45px;
+background-color: white;
+} 
+
+  #navbar-container {
+    display: none;
+  }
+
+  .header {
+    padding: 0px 9px;
+    background-color: white;
+}
+
+     /* Position and sizing of burger button */
+     .bm-burger-button {
+      position: absolute;
+      width: 27px;
+      height: 23px;
+      right: 90px;
+      top: 20px;
+    }
+
+    /* Color/shape of burger icon bars */
+    .bm-burger-bars {
+      background: $first-color;
+    }
+
+    /* Color/shape of burger icon bars on hover*/
+    .bm-burger-bars-hover {
+      background: #a90000;
+    }
+
+    /* Position and sizing of clickable cross button */
+    .bm-cross-button {
+      height: 24px;
+      width: 24px;
+      right: 17px !important;
+    }
+
+    /* Color/shape of close button cross */
+    .bm-cross {
+      background: #bdc3c7;
+    }
+
+    /*
+    Sidebar wrapper styles
+    Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+    */
+    .bm-menu-wrap {
+      position: fixed;
+      height: 100%;
+      right: 162px;
+      top: 0;
+    }
+
+    /* General sidebar styles */
+    .bm-menu {
+      background: $first-color;
+      padding: 2.5em 1.5em 0;
+      font-size: 1.15em;
+      width: 181px !important;
+    }
+
+    /* Morph shape necessary with bubble or elastic */
+    .bm-morph-shape {
+      fill: $first-color;
+    }
+
+    /* Wrapper for item list */
+    .bm-item-list {
+      color: #b8b7ad;
+      padding: 0.8em;
+      height: 80%;
+      background-color: $first-color;
+    }
+
+    /* Individual item */
+    .bm-item {
+      display: inline-block;
+    }
+
+    /* Styling of overlay */
+    .bm-overlay {
+      background: rgba(0, 0, 0, 0.3);
+      display: none !important;
+    }
+
+    /* Individual item */
+    .bm-item {
+      display: inline-block;
+      color: #d1d1d1;
+      margin-bottom: 10px;
+      text-align: left;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .bm-item:hover {
+      color: #ffffff;
+    }
+
 }
 
 
@@ -58,16 +193,23 @@ Menu {
     .logo {
       width: 106px;
     }
+    .header-content {
+      display: none;
+    }
 
-
-    .header-content .logo-navbar {
+    .header-content-mobile .logo-navbar {
       margin-left: 0em;
       padding-top: 6px;
     }
-      
-    Menu {
-      display: block;
-    }
+
+    .header-content-mobile {
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 45px;
+    background-color: white;
+    } 
+    
 
     #navbar-container {
       display: none;
@@ -111,6 +253,8 @@ Menu {
       position: fixed;
       height: 100%;
       right: 162px;
+      top: 0;
+
     }
 
     /* General sidebar styles */
@@ -130,6 +274,7 @@ Menu {
     .bm-item-list {
       color: #b8b7ad;
       padding: 0.8em;
+      height: 80%;
       background-color: $first-color;
     }
 

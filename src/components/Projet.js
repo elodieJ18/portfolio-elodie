@@ -7,7 +7,7 @@ import logoqhare from "../assets/logo-qhare.svg";
 import logoohmyfood from "../assets/logo-ohmyfood.svg";
 
 export const Projet = () =>  {
-        return (         <div id="project">
+        return (         <div>
                             <div className='title-project-home'>
                                 <h1>Projet</h1>
                             </div>

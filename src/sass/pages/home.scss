@@ -17,7 +17,9 @@
   }
 
   
-
+html {
+  scroll-behavior: smooth;
+}
  
 
 body {
@@ -405,6 +407,219 @@ img{
 
 #menu-burger {
   display: none;
+}
+
+
+@media (max-width: 1080px) {
+ 
+  h1 {
+    font-size: 26px;
+}
+  .container-block-project {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-column: 1;
+      row-gap: 20px;
+      column-gap: 20px;
+      margin: 22px 5px 39px 5px;
+  }
+
+  .container-block-project .element-container-block-projet {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .resume-card-contact {
+    margin-top: 0px;
+    padding-bottom: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 9px;
+  }
+
+  .resume {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0px; 
+    align-items: stretch;
+    flex-direction: column;
+ }
+
+
+.resume-left {
+    border-right: none;
+}
+
+
+.resume-card-presentation {
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 10px;
+  row-gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+ .info-projet {
+  padding: 17px 0px 0px 0px ;
+  width: 76%;
+ }
+
+ .block-formation {
+  display: flex;
+  width: 250px;
+  margin-left: 24px;
+  flex-direction: column; 
+  border-radius: 1.5em;
+  padding: 10px;
+}
+.formation {
+  width: 320px;
+}
+.block-langue {
+  padding-bottom: 20px;
+}
+
+.resume-left .date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#experiences {
+  margin: 170px 0px 27px 0px;
+}
+
+.resume-toggle-mobile {
+  display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: 10px;
+    margin-top: 50px;
+    padding: 20px 20px 40px 20px;
+    button {
+      margin: 0;
+      font-family: "Kanit", sans-serif;
+      color: white;
+      border: none;
+      border-radius: 1.5em;
+      padding: 10px 28px 10px 28px;
+      display: flex;
+      justify-content: space-between;
+    
+    }
+}
+
+.blue-background {
+  background-color: $first-color;
+}
+
+.red-background {
+  background-color: $second-color;
+}
+
+.green-background {
+  background-color: $third-color;
+}
+
+.resume-desk {
+  display: none;
+}
+
+.resume-card-logo-titre img {
+  width: 95px;
+}
+.resume-card-contact-into {
+      p, a {
+      font-size: 13px;
+    }
+  img {
+    width: 95px;
+  }
+}
+
+.container-block-langue {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.subtitle-resume {
+  width: max-content;
+}
+
+.title-job-formation {
+  text-align: left;
+}
+
+.aboutformation p{
+  text-align: start;
+}
+
+
+.resume-card-logo-info-mobile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
+  margin: 0px;
+}
+
+.resume-card-presentation img {
+  width: 94px;
+}
+
+.title-experience-home {
+  margin-bottom: 10px;
+}
+
+.resume-card-logo-titre p {
+  padding-top: 2px;
+  text-align: left;
+  line-height: 11px;
+  font-size: 13px;
+}
+
+
+.list-qualite {
+  display: flex;
+  text-align: left;
+  column-gap: 20px;
+  justify-content: space-around;
+}
+
+
+.plus-minus {
+  cursor: pointer;
+  height: 21px;
+  position: relative;
+  width: 21px;
+  &:before,
+  &:after{
+    background: white;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 8px;
+    width: 21px;
+    transition: transform 500ms ease;
+  }
+  &:after {
+    transform-origin: center;
+  }
+}
+
+.collapsed{
+  &:after {
+    transform: rotate(90deg);
+  }
+  &:before {
+    transform: rotate(180deg);
+  }
+}
 }
 
 
