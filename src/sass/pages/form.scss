@@ -23,6 +23,7 @@
         border-radius: 1.5em;
         padding: 4px 10px;
         border: none;
+        width: 100%;
     }
 }
 
@@ -30,16 +31,21 @@ textarea {
     height: 87px;
     padding: 4px 10px;
     resize: none;
+    width: 100%;
 }
 
 .form-email input {
-    width: 213px;
+    width: 224px;
 }
 
- 
 
 .form-email-name {
     display: flex;
+    column-gap: 22px;    
+}
+
+.form-name input{
+    width: 100%;
 }
 
 .form-email input{
@@ -58,17 +64,30 @@ textarea {
     text-transform: capitalize;
     }}
 
+    @media (min-width: 720px) and (max-width: 1280px) {
+        .form-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            padding-top: 2%;
+            width: 64%;
+            margin-left: 18%;
+            row-gap: 5px;
+        }
+    }
+
 
     @media (max-width: 720px) {
   
         .form-email-name {
             display: flex;
             flex-direction: column;
-            row-gap: 14px;
+            row-gap: 14px; 
+             
         }
       
           .form-email input {
-            width: 92%;
+            width: 100%;
             margin-left: 0px;
           }
 
@@ -91,7 +110,7 @@ textarea {
             width: 84%;
             row-gap: 5px;
             margin-left: 0%;
-            padding: 0px 26px 26px 26px;
+            padding: 0px 0px 26px 20px;
 
         }
                

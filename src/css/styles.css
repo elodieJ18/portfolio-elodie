@@ -60,11 +60,25 @@ a {
   margin-bottom: 156px;
 }
 
-.arrow-down-home {
-  padding: 17px 13px 6px;
+.arrow-next-on-home {
+  transform: scale(1);
+  padding: 10px 13px 13px;
   border: 1px solid #3f62ab;
-  border-radius: 2.5em;
   background-color: #3f62ab;
+  left: 48%;
+  height: 23px;
+  position: absolute;
+  border-radius: 1.5em;
+  transform: scale(1);
+  transition-property: transform;
+}
+.arrow-next-on-home:hover {
+  box-shadow: 0 1px 8px rgba(79, 69, 69, 0.79);
+  transform: scale(1.05);
+}
+
+.arrow-down-home {
+  border-radius: 2.5em;
 }
 .arrow-down-home .icon-arrow-down-home {
   color: white !important;
@@ -347,6 +361,10 @@ a {
   color: white;
   padding: 10px 30px;
 }
+.btn-voir-projet:hover {
+  background-image: url("/src/assets/block-contact.svg");
+  color: black;
+}
 
 .info-projet {
   display: flex;
@@ -411,6 +429,9 @@ strong {
     flex-direction: row;
     align-items: center;
     column-gap: 9px;
+  }
+  .arrow-next-on-home {
+    left: 48%;
   }
   .resume {
     display: flex;
@@ -579,6 +600,9 @@ strong {
   .container-block-project .element-container-block-projet {
     width: 90%;
     margin-left: 5%;
+  }
+  .arrow-next-on-home {
+    left: 43%;
   }
   .resume-card-contact {
     margin-top: 0px;
@@ -761,20 +785,27 @@ strong {
   border-radius: 1.5em;
   padding: 4px 10px;
   border: none;
+  width: 100%;
 }
 
 textarea {
   height: 87px;
   padding: 4px 10px;
   resize: none;
+  width: 100%;
 }
 
 .form-email input {
-  width: 213px;
+  width: 224px;
 }
 
 .form-email-name {
   display: flex;
+  column-gap: 22px;
+}
+
+.form-name input {
+  width: 100%;
 }
 
 .form-email input {
@@ -794,6 +825,17 @@ textarea {
   text-transform: capitalize;
 }
 
+@media (min-width: 720px) and (max-width: 1280px) {
+  .form-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 2%;
+    width: 64%;
+    margin-left: 18%;
+    row-gap: 5px;
+  }
+}
 @media (max-width: 720px) {
   .form-email-name {
     display: flex;
@@ -801,7 +843,7 @@ textarea {
     row-gap: 14px;
   }
   .form-email input {
-    width: 92%;
+    width: 100%;
     margin-left: 0px;
   }
   #form {
@@ -822,7 +864,7 @@ textarea {
     width: 84%;
     row-gap: 5px;
     margin-left: 0%;
-    padding: 0px 26px 26px 26px;
+    padding: 0px 0px 26px 20px;
   }
 }
 footer {
@@ -844,7 +886,7 @@ footer ul {
   flex-direction: column;
   align-items: center;
   row-gap: 16px;
-  padding-top: 20px;
+  padding: 20px 0px;
 }
 .footer-container p {
   color: white;
@@ -871,6 +913,13 @@ footer ul {
 .reseaux-sociaux-container img {
   height: 100%;
   width: 46px;
+}
+
+.info-creation a {
+  color: white;
+  font-weight: 100;
+  font-size: 14px;
+  padding-bottom: 20px;
 }
 
 @font-face {
@@ -948,6 +997,7 @@ footer ul {
     align-items: center;
     padding: 5px 45px;
     background-color: white;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   }
   #navbar-container {
     display: none;
@@ -1053,6 +1103,7 @@ footer ul {
     align-items: center;
     padding: 5px 45px;
     background-color: white;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   }
   #navbar-container {
     display: none;

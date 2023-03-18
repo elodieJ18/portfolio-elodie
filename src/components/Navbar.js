@@ -21,13 +21,13 @@ export const Navbar = () => {
     <div className={fix ? 'header fixed' : "header"}>
       <div className="header-content">
         <div className="logo-navbar">
-          <Link  to="/">
+          <Link  to="/#home">
             <img className="logo" src={logo} alt="logo Elodie Jean" />
           </Link>
         </div>
         <div id="navbar">
           <div id="navbar-container">
-              <Link to="/">
+              <Link to="/#home">
                 <div className="navbar-element">
                   <p className="linkName">accueil</p>
                 </div>

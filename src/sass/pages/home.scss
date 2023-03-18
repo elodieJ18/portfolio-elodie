@@ -72,11 +72,28 @@ a {
 }
 
 
-.arrow-down-home {
-  padding: 17px 13px 6px;
+.arrow-next-on-home{
+  transform: scale(1);
+  padding: 10px 13px 13px;
   border: 1px solid $first-color;
-  border-radius: 2.5em;
   background-color: $first-color;
+  left: 48%;
+  height: 23px;
+  position: absolute;
+  border-radius: 1.5em;
+  transform: scale(1);
+  transition-property: transform;
+    &:hover{
+        box-shadow: 0 1px 8px rgb(79 69 69 / 79%);
+        transform: scale(1.05);
+      }
+  }  
+
+
+.arrow-down-home {
+  border-radius: 2.5em;
+ 
+ 
 .icon-arrow-down-home {
   color: white !important;
     font-size: 28px;
@@ -367,6 +384,11 @@ img{
   border-radius: 1.5em;
   color: white;
   padding: 10px 30px;
+
+  &:hover {
+    background-image: url("/src/assets/block-contact.svg");
+    color: black;
+  }
 }
 
 .info-projet {
@@ -436,6 +458,10 @@ img{
     flex-direction: row;
     align-items: center;
     column-gap: 9px;
+  }
+
+  .arrow-next-on-home {
+    left: 48%;
   }
 
   .resume {
@@ -643,6 +669,10 @@ img{
   .container-block-project .element-container-block-projet {
     width: 90%;
     margin-left: 5%;
+  }
+
+  .arrow-next-on-home {
+    left: 43%;
   }
 
   .resume-card-contact {

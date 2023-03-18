@@ -7,7 +7,8 @@ export const Form = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+    emailjs.sendForm(process.env.YOUR_SERVICE_ID,  process.env.YOUR_TEMPLATE_ID, form.current, 
+      process.env.YOUR_PUBLIC_KEY)
       .then((result) => {
           console.log(result.text);
       }, (error) => {
@@ -18,15 +19,17 @@ export const Form = () => {
   return (
     <form className='form-contact' ref={form} onSubmit={sendEmail}>
       <div className='form-email-name'>
+        <div className='form-name'>
         <label htmlFor="name"></label>
-        <input type="text" name="user_name" placeholder='name'/>
+        <input type="text" name="user_name" placeholder='Nom'/>
+        </div>
         <div className='form-email'>
         <label htmlFor="email"></label>
-        <input type="email" name="user_email" placeholder='email' />
+        <input type="email" name="user_email" placeholder='Email' />
         </div>
       </div>
       <label htmlFor="message"></label>
-      <textarea name="message" placeholder='message'/>
+      <textarea name="message" placeholder='Message'/>
       <div className='input-submit'>
         <input type="submit" value="ENVOYER" />
       </div>

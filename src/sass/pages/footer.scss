@@ -18,7 +18,7 @@ footer {
     flex-direction: column;
     align-items: center;
     row-gap: 16px;
-    padding-top: 20px;
+    padding: 20px 0px;
 
     p{
         color: white;
@@ -51,10 +51,19 @@ footer {
     width: 46px;
 
     }
-
    
 } 
 
+.info-creation {
+    a {
+        color: white;
+        font-weight: 100;
+        font-size: 14px;
+        padding-bottom: 20px;
+    }
+}
+
 @media (max-width: 720px) { 
+    
 
 }

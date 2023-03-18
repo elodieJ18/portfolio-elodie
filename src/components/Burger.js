@@ -21,7 +21,7 @@ function Burger() {
     <div>
          <div className="header-content-mobile">
         <div className="logo-navbar">
-          <Link  to="/">
+          <Link  to="/home">
             <img className="logo" src={logo} alt="logo Elodie Jean" />
           </Link>
         </div>
