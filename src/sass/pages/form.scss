@@ -79,6 +79,10 @@ textarea {
     }
 }
 
+.input-submit input {
+    cursor: pointer;
+}
+
     @media (min-width: 720px) and (max-width: 1280px) {
         .form-contact {
             display: flex;

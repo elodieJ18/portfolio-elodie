@@ -61,7 +61,6 @@ a {
 }
 
 .arrow-next-on-home {
-  transform: scale(1);
   left: 48%;
   height: 0px;
   position: absolute;
@@ -78,9 +77,10 @@ a {
   padding: 13px 11px 5px;
   border: 1px solid #3f62ab;
   background-color: #3f62ab;
+  box-shadow: 0 2px 4px -1px rgba(79, 69, 69, 0.79);
 }
 .arrow-down-home:hover {
-  box-shadow: 0 1px 8px rgba(79, 69, 69, 0.79);
+  box-shadow: 0 4px 10px 0px rgba(79, 69, 69, 0.79);
 }
 .arrow-down-home .icon-arrow-down-home {
   color: white !important;
@@ -355,6 +355,11 @@ a {
 
 .btn-projet {
   padding: 20px 0px 34px 0px;
+  transform: scale(1);
+  transition-property: transform;
+}
+.btn-projet:hover {
+  transform: scale(1.01);
 }
 
 .btn-voir-projet {
@@ -362,10 +367,11 @@ a {
   border-radius: 1.5em;
   color: white;
   padding: 10px 30px;
+  box-shadow: 0 2px 4px -1px rgba(79, 69, 69, 0.79);
 }
 .btn-voir-projet:hover {
-  background-image: url("/src/assets/block-contact.svg");
-  color: black;
+  box-shadow: 0 4px 9px -3px rgba(79, 69, 69, 0.79);
+  transform: scale(1.05);
 }
 
 .info-projet {
@@ -840,6 +846,10 @@ textarea {
 }
 .other-way-login .sucess {
   font-weight: 500;
+}
+
+.input-submit input {
+  cursor: pointer;
 }
 
 @media (min-width: 720px) and (max-width: 1280px) {
