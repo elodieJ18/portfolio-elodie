@@ -7,7 +7,7 @@ export const Form = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(process.env.YOUR_SERVICE_ID,  process.env.YOUR_TEMPLATE_ID, form.current, "Wj0MhcHc-6ouc5IGS")
+    emailjs.sendForm("service_0xo0fcl",  "template_3835hq3", form.current, "Wj0MhcHc-6ouc5IGS")
       .then((result) => {
           console.log(result.text);
       }, (error) => {
