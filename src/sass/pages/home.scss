@@ -74,17 +74,13 @@ a {
 
 .arrow-next-on-home{
   transform: scale(1);
-  padding: 10px 13px 13px;
-  border: 1px solid $first-color;
-  background-color: $first-color;
   left: 48%;
-  height: 23px;
+  height: 0px;
   position: absolute;
   border-radius: 1.5em;
   transform: scale(1);
   transition-property: transform;
     &:hover{
-        box-shadow: 0 1px 8px rgb(79 69 69 / 79%);
         transform: scale(1.05);
       }
   }  
@@ -92,7 +88,12 @@ a {
 
 .arrow-down-home {
   border-radius: 2.5em;
- 
+  padding: 13px 11px 5px;
+  border: 1px solid $first-color;
+  background-color: $first-color;
+  &:hover{
+    box-shadow: 0 1px 8px rgb(79 69 69 / 79%);
+  }
  
 .icon-arrow-down-home {
   color: white !important;
