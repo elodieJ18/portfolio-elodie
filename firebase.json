@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "portfolio-elodie-jean",
     "public": "build",
     "ignore": [
       "firebase.json",

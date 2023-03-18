@@ -25,7 +25,7 @@ export const Resume = () =>  {
             </div>
             <div className='resume-card-contact'>
               <a href='https://www.linkedin.com/in/elodie-cjean/'>Linkedin</a>
-              <a href='https://www.linkedin.com/in/elodie-cjean/'>Github</a>
+              <a href='https://github.com/elodieJ18'>Github</a>
             </div>
           </div>
           <div className='resume-left'>
@@ -156,7 +156,7 @@ export const Resume = () =>  {
                 </div>
                 <div className='list-competence'>
                   <ul>
-                    <li>HTML/CSS</li>
+                    <li>HTML/CSS/SASS</li>
                     <li>JavaScript</li>
                     <li>React</li>
                   </ul>
@@ -167,6 +167,7 @@ export const Resume = () =>  {
                   <p className='list-competence-plus'>+</p>
                   <ul>
                     <li>Intégration Laravel</li>
+                    <li></li>
                     <li>Github</li>
                   </ul>
                 </div>

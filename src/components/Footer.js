@@ -8,11 +8,11 @@ export const Footer = () => {
    <footer>
     <div className='footer-container'>
         <div className='reseaux-sociaux'>
-            <a href=""className='reseaux-sociaux-container'>
+            <a href="https://github.com/elodieJ18" target="_blank" className='reseaux-sociaux-container'>
                 <img src={logoGithub}/>
                 <p>github</p>
             </a>
-            <a href="" className='reseaux-sociaux-container'>
+            <a href="https://www.linkedin.com/in/elodie-cjean/" target="_blank" className='reseaux-sociaux-container'>
                 <img src={logoLinkedin}/>
                 <p>Linkedin</p>
             </a>
@@ -20,7 +20,7 @@ export const Footer = () => {
         </div>
         <div className='info-creation'>
             <p>Fait via React by Elodie Jean</p>
-            <a href='mailto: elodie.jean18@gmail.com'>elodie.jean18@gmail.com</a>
+            <a href='mailto: elodie.jean18@gmail.com' target="_blank">elodie.jean18@gmail.com</a>
         </div>
         
     </div>

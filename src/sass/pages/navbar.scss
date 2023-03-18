@@ -13,6 +13,8 @@
     }
 }
 
+
+
 .header-content {
   display: flex;
   justify-content: space-between;
@@ -54,9 +56,10 @@
   background: rgba(255, 255, 255, 0.24);
   box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
   backdrop-filter: blur(10px);
+  z-index: 999;
 }
 
-.header-content-mobile, #menu-burger {
+#menu-burger, .header-content-mobile  {
   display: none;
 }
 
@@ -98,8 +101,8 @@ box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
       position: absolute;
       width: 27px;
       height: 23px;
-      right: 90px;
-      top: 20px;
+      right: 52px;
+      top: 12px;
     }
 
     /* Color/shape of burger icon bars */
@@ -191,6 +194,10 @@ box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
         background-color: white;
     }
 
+    #menu-burger {
+      display: block;
+    }
+
     .logo {
       width: 106px;
     }
@@ -222,7 +229,7 @@ box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
       width: 27px;
       height: 23px;
       right: 24px;
-      top: 7px;
+      top: 12px;
     }
 
     /* Color/shape of burger icon bars */
