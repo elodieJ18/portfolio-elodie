@@ -763,10 +763,10 @@ strong {
 }
 #form {
   background-image: url("/src/assets/block-contact.svg");
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-repeat: no-repeat;
   padding-bottom: 54px;
   background-repeat: no-repeat;
@@ -825,6 +825,21 @@ textarea {
   text-transform: capitalize;
 }
 
+.other-way-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 41%;
+  border-radius: 1.5em;
+  background-color: white;
+  padding: 10px;
+  margin-left: 30%;
+  margin-top: 16px;
+}
+.other-way-login .sucess {
+  font-weight: 500;
+}
+
 @media (min-width: 720px) and (max-width: 1280px) {
   .form-contact {
     display: flex;
@@ -834,6 +849,14 @@ textarea {
     width: 64%;
     margin-left: 18%;
     row-gap: 5px;
+  }
+  .other-way-login {
+    width: 66%;
+    border-radius: 1.5em;
+    background-color: white;
+    padding: 10px;
+    margin-left: 17%;
+    margin-top: 22px;
   }
 }
 @media (max-width: 720px) {
@@ -846,14 +869,15 @@ textarea {
     width: 100%;
     margin-left: 0px;
   }
+  .other-way-login {
+    width: 83%;
+    margin-left: 7%;
+    margin-top: 0px;
+  }
   #form {
     background-image: url("/src/assets/block-contact-mobile.svg");
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
     background-repeat: no-repeat;
-    padding-bottom: 0px;
+    padding-bottom: 34px;
     background-repeat: no-repeat;
   }
   .form-contact {
@@ -863,7 +887,7 @@ textarea {
     padding-top: 2%;
     width: 84%;
     row-gap: 5px;
-    margin-left: 0%;
+    margin-left: 1%;
     padding: 0px 0px 26px 20px;
   }
 }
