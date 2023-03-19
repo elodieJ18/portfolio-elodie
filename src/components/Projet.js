@@ -24,7 +24,7 @@ export const Projet = () =>  {
                                                     <h2 className='title-projet'>Groupomania</h2>
                                                     <p><strong>Techno front :</strong> React.js/redux</p>
                                                     <p><strong>Techno back :</strong> MySQL/sequelize</p>
-                                                    <p><strong>Quelques mots :</strong> Project Fullstack / Réseau Social d'entreprise</p>
+                                                    <p><strong>Quelques mots :</strong> Project Fullstack / Réseau Social d'entreprise (lancé sur <strong>Heroku</strong>)</p>
                                                 </div> 
                                             </div>
                                             <div className='btn-projet'>
@@ -39,7 +39,7 @@ export const Projet = () =>  {
                                         <div className='info-element-container-block-projet'>
                                             <h2 className='title-projet'>Tw22Studio</h2>
                                             <p><strong>Techno front :</strong> Fromscratch (html/scss/js)</p>
-                                            <p><strong>Quelques mots :</strong> Colaboration avec Tw22Studio/ création du site d'après maquette figma</p>
+                                            <p><strong>Quelques mots :</strong> Colaboration avec Tw22Studio/ création du site d'après maquette figma (lancé sur <strong>Filezilla</strong>)</p>
                                         </div>
                                     </div>
                                         <div className='btn-projet'>
@@ -69,7 +69,7 @@ export const Projet = () =>  {
                                         <div className='info-element-container-block-projet'>
                                             <h2 className='title-projet'>Qhare CRM</h2>
                                             <p><strong>Techno :</strong> Fromscratch (html/css)</p>
-                                            <p><strong>Quelques mots :</strong> (En alternance) Création d'une onepage Fromscratch</p>
+                                            <p><strong>Quelques mots :</strong> (En alternance) Création d'une onepage Fromscratch (lancé sur <strong>Filezilla</strong>)</p>
                                         </div>
                                       </div> 
                                         <div className='btn-projet'>
@@ -84,8 +84,7 @@ export const Projet = () =>  {
                                         <div className='info-element-container-block-projet'>
                                             <h2 className='title-projet'>OhMyFood</h2>
                                             <p><strong>Techno :</strong> Fromscratch (html/css/scss)</p>
-                                            <p><strong>Quelques mots :</strong> Début de création d'un site commande en ligne et de livraison de repas</p>
-                                            <p>Apprentissage d'animation fluide et moderne</p>
+                                            <p><strong>Quelques mots :</strong> Apprentissage d'animation fluide et moderne, demo d'un site de commande en ligne et de livraison de repas</p>
                                         </div>
                                       </div>  
                                         <div className='btn-projet'>
@@ -99,7 +98,7 @@ export const Projet = () =>  {
                                         </div>
                                         <div className='info-element-container-block-projet'>
                                             <h2 className='title-projet'>Excel Industrie</h2>
-                                            <p><strong>Techno :</strong>Wordpress</p>
+                                            <p><strong>Techno :</strong> Wordpress</p>
                                             <p><strong>Quelques mots :</strong> (En alternance) Intégration de pages statiques et amériolation de Experience Design/responsive</p>
                                         </div>
                                       </div>  

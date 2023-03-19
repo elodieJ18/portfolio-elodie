@@ -45,6 +45,21 @@
     width: 160px;
 }
 
+#navbar {
+transition-duration: 0.5s;
+transition-timing-function: ease;
+animation: move-nav 1.5s forwards;
+}   
+
+@keyframes move-nav {
+  0% {
+    margin-top: -100px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+
  
 .navbar-container {
   display: block;
