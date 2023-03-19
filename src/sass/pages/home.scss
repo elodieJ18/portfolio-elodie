@@ -72,8 +72,11 @@ a {
   overflow-x: hidden;
   overflow-y: scroll;
   transition-duration: 2s;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
   transition-timing-function: ease;
-  animation: loader 6s forwards; 
+  //animation: loader 1s forwards; 
   z-index: 999;
     .load-circle{
       background-image: url("/src/assets/loader1-01.svg");
@@ -84,10 +87,8 @@ a {
       border-radius: 20.5em;
       width: 10px;
       height: 10px;
-      padding: 100px;
-      position: relative;
-      top: 32%;
-      left: 43%;
+      padding: 100px; 
+      margin-top: 260px;
     }
  }
 
@@ -99,17 +100,6 @@ a {
     font-weight: 900;
  }
 
- @keyframes loader {
-  0%{
-    opacity: 1;
-  }
-  98%{
-    opacity: 0.5;
-  }
-  100%{
-    opacity: 0;
-  }
- }
 
  @keyframes loaderArrow {
   0% { 
@@ -564,6 +554,11 @@ img{
 
 @media (max-width: 1080px) {
  
+    .load-circle{
+      margin-top: 120px;
+    }
+  
+ 
   h1 {
     font-size: 26px;
 }
@@ -779,7 +774,14 @@ img{
 }
 
 
+
 @media (max-width: 720px) {
+ 
+    .load-circle{
+      margin-top: 120px;
+    }
+  
+
   #menu-burger {
     display: block;
   }
