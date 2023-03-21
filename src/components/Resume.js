@@ -74,7 +74,7 @@ export const Resume = () =>  {
                   <div className='aboutformation'>
                     <p className='title-job-formation'>Développeuse Front-end <span>(1 an)</span></p>
                     <p className='where-formation'>50A agence digitale</p>
-                    <ul><li>Développeuse front-end /Intégratrice /Webmaster</li></ul>
+                    <ul><li>Développeuse front-end</li></ul>
                   </div>
               </div>
               <div className='block-formation'>
@@ -167,7 +167,7 @@ export const Resume = () =>  {
                   <p className='list-competence-plus'>+</p>
                   <ul>
                     <li>Intégration Laravel</li>
-                    <li></li>
+                    <li>Node.js</li>
                     <li>Github</li>
                   </ul>
                 </div>

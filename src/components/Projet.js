@@ -23,7 +23,7 @@ export const Projet = () =>  {
                                                 <div className='info-element-container-block-projet'>
                                                     <h2 className='title-projet'>Groupomania</h2>
                                                     <p><strong>Techno front :</strong> React.js/redux</p>
-                                                    <p><strong>Techno back :</strong> MySQL/sequelize</p>
+                                                    <p><strong>Techno back :</strong> MySQL/sequelize/Node.js</p>
                                                     <p><strong>Quelques mots :</strong> Project Fullstack / Réseau Social d'entreprise (lancé sur <strong>Heroku</strong>)</p>
                                                 </div> 
                                             </div>
