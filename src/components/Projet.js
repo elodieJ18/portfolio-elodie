@@ -107,21 +107,6 @@ export const Projet = () =>  {
                                             <a href='https://www.exel-industries.com/?lang=en' className='btn-voir-projet' rel="noreferrer" target="_blank">VOIR LE PROJET</a>
                                         </div>
                                     </div>
-                                    <div className='element-container-block-projet'>
-                                     <div className='info-projet'>
-                                        <div className='block-projet-logo'>
-                                            <img src={logoohmyfood} alt="Logo ohmyfood"/>
-                                        </div>
-                                        <div className='info-element-container-block-projet'>
-                                            <h2 className='title-projet'>OhMyFood</h2>
-                                            <p><strong>Techno :</strong> Fromscratch (html/css/scss)</p>
-                                            <p><strong>Quelques mots :</strong> Apprentissage d'animation fluide et moderne, demo d'un site de commande en ligne et de livraison de repas</p>
-                                        </div>
-                                      </div>  
-                                        <div className='btn-projet'>
-                                            <a href='https://elodiej18.github.io/ElodieJean_3_04122021/index.html' className='btn-voir-projet' rel="noreferrer" target="_blank">VOIR LE PROJET</a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
