@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ec2e3346.css",
-    "main.js": "/static/js/main.ef2598cc.js",
+    "main.js": "/static/js/main.1ebac91d.js",
     "static/js/787.bbe52291.chunk.js": "/static/js/787.bbe52291.chunk.js",
     "static/media/logo-contact.svg": "/static/media/logo-contact.d32520909f9d7ce6d422c7bd88b30782.svg",
     "static/media/logo-ohmyfood.svg": "/static/media/logo-ohmyfood.3c5eefd601c8181c84d6c870019f1cb5.svg",
@@ -14,6 +14,7 @@
     "static/media/logo-linkedin.svg": "/static/media/logo-linkedin.27328e62948e212a30a2c40264270135.svg",
     "static/media/block-contact.svg": "/static/media/block-contact.02f99c16579751d047a2.svg",
     "static/media/block-contact-mobile.svg": "/static/media/block-contact-mobile.aed5ecc6beea9144b0c9.svg",
+    "static/media/logo-beer.png": "/static/media/logo-beer.355e9685a3137299b181.png",
     "static/media/logo-excel-01.png": "/static/media/logo-excel-01.283297fe778b2af72a3b.png",
     "static/media/fond-background.svg": "/static/media/fond-background.084d6a7bfc5c1d413b52.svg",
     "static/media/loader1-01.svg": "/static/media/loader1-01.bc5d9cd53b5daf5c16a9.svg",
@@ -32,11 +33,11 @@
     "static/media/l.svg": "/static/media/l.6c39ced5d304c07eaa7eb253bfc66129.svg",
     "index.html": "/index.html",
     "main.ec2e3346.css.map": "/static/css/main.ec2e3346.css.map",
-    "main.ef2598cc.js.map": "/static/js/main.ef2598cc.js.map",
+    "main.1ebac91d.js.map": "/static/js/main.1ebac91d.js.map",
     "787.bbe52291.chunk.js.map": "/static/js/787.bbe52291.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ec2e3346.css",
-    "static/js/main.ef2598cc.js"
+    "static/js/main.1ebac91d.js"
   ]
 }
