@@ -6,6 +6,7 @@ import logotwstudio from "../assets/logo-tw22studio.svg";
 import logoqhare from "../assets/logo-qhare.svg";
 import logoohmyfood from "../assets/logo-ohmyfood.svg";
 import logoexcel from "../assets/logo-excel-01.png";
+import logobeer from "../assets/logo-beer.png";
 
 export const Projet = () =>  {
         return (         <div>
@@ -14,6 +15,21 @@ export const Projet = () =>  {
                             </div>
                             <div className='block-project'>
                                 <div className='container-block-project'>
+                                    <div className='element-container-block-projet'>
+                                        <div className='info-projet'>
+                                            <div className='block-projet-logo'>
+                                                <img src={logobeer} alt="Logo Excel"/>
+                                            </div>
+                                            <div className='info-element-container-block-projet'>
+                                                <h2 className='title-projet'>Loving Beer</h2>
+                                                <p><strong>Techno :</strong> React.js</p>
+                                                <p><strong>Quelques mots :</strong> Réalisé avec l'API "PUNK API" : Création d'un site internet de A à Z en faisant de appelle à API opensource</p>
+                                            </div>
+                                        </div>  
+                                            <div className='btn-projet'>
+                                                <a href='https://elodiej18.github.io/punk-api-frontend/' rel="noreferrer" className='btn-voir-projet' target="_blank">VOIR LE PROJET</a>
+                                            </div>
+                                        </div>
                                         <div className='element-container-block-projet'>
                                             <div className='info-projet'>
                                                 <div className='block-projet-logo'>  
@@ -28,7 +44,7 @@ export const Projet = () =>  {
                                                 </div> 
                                             </div>
                                             <div className='btn-projet'>
-                                                <a href='https://groupomaniademo.herokuapp.com/' className='btn-voir-projet' target="_blank">VOIR LE PROJET</a>
+                                                <a href='https://groupomaniademo.herokuapp.com/' className='btn-voir-projet' rel="noreferrer" target="_blank">VOIR LE PROJET</a>
                                             </div>
                                         </div>
                                     <div className='element-container-block-projet'>
@@ -43,7 +59,7 @@ export const Projet = () =>  {
                                         </div>
                                     </div>
                                         <div className='btn-projet'>
-                                            <a href='https://tw22studio.com/' className='btn-voir-projet' target="_blank">VOIR LE PROJET</a>
+                                            <a href='https://tw22studio.com/' className='btn-voir-projet' rel="noreferrer" target="_blank">VOIR LE PROJET</a>
                                         </div>
                                     </div>
                                     <div className='element-container-block-projet'>
@@ -54,11 +70,11 @@ export const Projet = () =>  {
                                         <div className='info-element-container-block-projet'>
                                             <h2 className='title-projet'>Ecofi</h2>
                                             <p><strong>CMS :</strong> Drupal</p>
-                                            <p><strong>Quelques mots :</strong> (En alternance) Intégration + animation JS </p>
+                                            <p><strong>Quelques mots :</strong> Réalisé avec l'agence 50A : Intégration + animation JS </p>
                                         </div>
                                       </div>
                                         <div className='btn-projet'>
-                                            <a href='https://www.ecofi.fr/' className='btn-voir-projet' target="_blank">VOIR LE PROJET</a>
+                                            <a href='https://www.ecofi.fr/' className='btn-voir-projet' rel="noreferrer" target="_blank">VOIR LE PROJET</a>
                                         </div>
                                     </div>
                                     <div className='element-container-block-projet'>
@@ -69,11 +85,26 @@ export const Projet = () =>  {
                                         <div className='info-element-container-block-projet'>
                                             <h2 className='title-projet'>Qhare CRM</h2>
                                             <p><strong>Techno :</strong> Fromscratch (html/css)</p>
-                                            <p><strong>Quelques mots :</strong> (En alternance) Création d'une onepage Fromscratch (lancé sur <strong>Filezilla</strong>)</p>
+                                            <p><strong>Quelques mots :</strong> Réalisé avec l'agence 50A : Création d'une onepage Fromscratch (lancé sur <strong>Filezilla</strong>)</p>
                                         </div>
                                       </div> 
                                         <div className='btn-projet'>
-                                            <a href='https://www.crm-qhare.fr/' className='btn-voir-projet' target="_blank">VOIR LE PROJET</a>
+                                            <a href='https://www.crm-qhare.fr/' className='btn-voir-projet' rel="noreferrer" target="_blank">VOIR LE PROJET</a>
+                                        </div>
+                                    </div>
+                                    <div className='element-container-block-projet'>
+                                     <div className='info-projet'>
+                                        <div className='block-projet-logo'>
+                                            <img src={logoexcel} alt="Logo Excel"/>
+                                        </div>
+                                        <div className='info-element-container-block-projet'>
+                                            <h2 className='title-projet'>Excel Industrie</h2>
+                                            <p><strong>Techno :</strong> Wordpress</p>
+                                            <p><strong>Quelques mots :</strong> Réalisé avec l'agence 50A : Intégration de pages statiques et amériolation de l'Experience Design/responsive</p>
+                                        </div>
+                                      </div>  
+                                        <div className='btn-projet'>
+                                            <a href='https://www.exel-industries.com/?lang=en' className='btn-voir-projet' rel="noreferrer" target="_blank">VOIR LE PROJET</a>
                                         </div>
                                     </div>
                                     <div className='element-container-block-projet'>
@@ -88,22 +119,7 @@ export const Projet = () =>  {
                                         </div>
                                       </div>  
                                         <div className='btn-projet'>
-                                            <a href='https://elodiej18.github.io/ElodieJean_3_04122021/index.html' className='btn-voir-projet' target="_blank">VOIR LE PROJET</a>
-                                        </div>
-                                    </div>
-                                    <div className='element-container-block-projet'>
-                                     <div className='info-projet'>
-                                        <div className='block-projet-logo'>
-                                            <img src={logoexcel} alt="Logo Excel"/>
-                                        </div>
-                                        <div className='info-element-container-block-projet'>
-                                            <h2 className='title-projet'>Excel Industrie</h2>
-                                            <p><strong>Techno :</strong> Wordpress</p>
-                                            <p><strong>Quelques mots :</strong> (En alternance) Intégration de pages statiques et amériolation de Experience Design/responsive</p>
-                                        </div>
-                                      </div>  
-                                        <div className='btn-projet'>
-                                            <a href='https://www.exel-industries.com/?lang=en' className='btn-voir-projet' target="_blank">VOIR LE PROJET</a>
+                                            <a href='https://elodiej18.github.io/ElodieJean_3_04122021/index.html' className='btn-voir-projet' rel="noreferrer" target="_blank">VOIR LE PROJET</a>
                                         </div>
                                     </div>
                                 </div>

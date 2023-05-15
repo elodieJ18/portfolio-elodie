@@ -163,6 +163,8 @@ export const Resume = () =>  {
                   <ul>
                     <li>Drupal</li>
                     <li>Wordpress</li>
+                    <li>Figma</li>
+                    <li>Suite Adobe</li>
                   </ul>
                   <p className='list-competence-plus'>+</p>
                   <ul>

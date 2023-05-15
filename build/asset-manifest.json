@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.7cd7f117.css",
-    "main.js": "/static/js/main.eb9928bf.js",
+    "main.css": "/static/css/main.ec2e3346.css",
+    "main.js": "/static/js/main.ef2598cc.js",
     "static/js/787.bbe52291.chunk.js": "/static/js/787.bbe52291.chunk.js",
     "static/media/logo-contact.svg": "/static/media/logo-contact.d32520909f9d7ce6d422c7bd88b30782.svg",
     "static/media/logo-ohmyfood.svg": "/static/media/logo-ohmyfood.3c5eefd601c8181c84d6c870019f1cb5.svg",
@@ -9,7 +9,6 @@
     "static/media/logo-groupomania.svg": "/static/media/logo-groupomania.cb53f4a2580c565678b64ad97db604dc.svg",
     "static/media/logo-ecofi.svg": "/static/media/logo-ecofi.e5f4ba1e350e06a73d21fc9744054a62.svg",
     "static/media/photo-cv.svg": "/static/media/photo-cv.c7b32cdebb8d987f115dc477cb34c36b.svg",
-    "static/media/titre-portfolio.png": "/static/media/titre-portfolio.fb573a4a242734dbec02.png",
     "static/media/logo-plus-petit.svg": "/static/media/logo-plus-petit.2b38d2f56e78100f1c64305cb8e94da9.svg",
     "static/media/logo-github.svg": "/static/media/logo-github.8f1479a971c3ba54d062b4411eebce06.svg",
     "static/media/logo-linkedin.svg": "/static/media/logo-linkedin.27328e62948e212a30a2c40264270135.svg",
@@ -21,14 +20,23 @@
     "static/media/loader2-01.svg": "/static/media/loader2-01.c0094a07564d8aaad3ba.svg",
     "static/media/loader3-01.svg": "/static/media/loader3-01.4f2b603c4ba117ffcb79.svg",
     "static/media/loader4-01.svg": "/static/media/loader4-01.94af4ccd362d9cf96107.svg",
+    "static/media/o3.svg": "/static/media/o3.0fccfcade94e790352d36680e324bcac.svg",
+    "static/media/o2.svg": "/static/media/o2.3cca3d22e17fa9abdfb2632a924aa7fa.svg",
+    "static/media/o.svg": "/static/media/o.12f316b6bc500ee73cf7db28816545d1.svg",
+    "static/media/r.svg": "/static/media/r.2dffdb3c1ebe59bb05725efecc77ae0c.svg",
+    "static/media/i.svg": "/static/media/i.6cd3d2c7179e8b220dec204bce7d543e.svg",
+    "static/media/p.svg": "/static/media/p.493b1d48f99d81fe6311c6376754fdf4.svg",
+    "static/media/t.svg": "/static/media/t.659b2775195d32b226cc3fa31669a2a7.svg",
+    "static/media/f.svg": "/static/media/f.ddf3bfad847dbad0008bcfb017ee1dac.svg",
     "static/media/logo-tw22studio.svg": "/static/media/logo-tw22studio.72dc4defa2844e13e683e401adfb8308.svg",
+    "static/media/l.svg": "/static/media/l.6c39ced5d304c07eaa7eb253bfc66129.svg",
     "index.html": "/index.html",
-    "main.7cd7f117.css.map": "/static/css/main.7cd7f117.css.map",
-    "main.eb9928bf.js.map": "/static/js/main.eb9928bf.js.map",
+    "main.ec2e3346.css.map": "/static/css/main.ec2e3346.css.map",
+    "main.ef2598cc.js.map": "/static/js/main.ef2598cc.js.map",
     "787.bbe52291.chunk.js.map": "/static/js/787.bbe52291.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7cd7f117.css",
-    "static/js/main.eb9928bf.js"
+    "static/css/main.ec2e3346.css",
+    "static/js/main.ef2598cc.js"
   ]
 }

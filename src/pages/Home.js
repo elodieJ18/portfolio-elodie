@@ -43,6 +43,7 @@ function Home() {
                 <img className=" position-o" src={o} alt="Portfolio Elodie Jean" />
                 <img className="position-r" src={r} alt="Portfolio Elodie Jean" />
                 <img className="position-t" src={t} alt="Portfolio Elodie Jean" />
+                <img className="position-t" src={f} alt="Portfolio Elodie Jean" />
                 <img className="position-o2" src={o2} alt="Portfolio Elodie Jean" />
                 <img className="position-l" src={l} alt="Portfolio Elodie Jean" />
                 <img className="position-i" src={i} alt="Portfolio Elodie Jean" />
