@@ -30,7 +30,7 @@ export const Projet = () =>  {
                                                 <a href='https://elodiej18.github.io/punk-api-frontend/' rel="noreferrer" className='btn-voir-projet' target="_blank">VOIR LE PROJET</a>
                                             </div>
                                         </div>
-                                        <div className='element-container-block-projet'>
+                                        {/*<div className='element-container-block-projet'>
                                             <div className='info-projet'>
                                                 <div className='block-projet-logo'>  
                                                     <img src={logogroupomania} alt="Logo Groupomania"/>
@@ -46,7 +46,7 @@ export const Projet = () =>  {
                                             <div className='btn-projet'>
                                                 <a href='https://groupomaniademo.herokuapp.com/' className='btn-voir-projet' rel="noreferrer" target="_blank">VOIR LE PROJET</a>
                                             </div>
-                                        </div>
+                                        </div>}*/}
                                     <div className='element-container-block-projet'>
                                      <div className='info-projet'>
                                         <div className='block-projet-logo'> 
