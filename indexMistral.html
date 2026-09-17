@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Demo - Elodie Jean</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-primary: #f8f9fa;
+        --bg-secondary: #ffffff;
+        --text-primary: #212529;
+        --text-secondary: #6c757d;
+        --primary: #2a4a8a;
+        --secondary: #d63a4a;
+        --tertiary: #7da8a0;
+        --border: 1px solid rgba(0, 0, 0, 0.1);
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      [data-theme="dark"] {
+        --bg-primary: #0a192f;
+        --bg-secondary: #121212;
+        --text-primary: #e0e0e0;
+        --text-secondary: #a0a0a0;
+        --primary: #58a6ff;
+        --secondary: #ff7b72;
+        --tertiary: #79c0ff;
+        --border: 1px solid rgba(255, 255, 255, 0.1);
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* ===== LOADING SCREEN (SERPENT) ===== */
+      .snake-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-secondary);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+
+      .snake-loader canvas {
+        border: 2px solid var(--primary);
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(42, 74, 138, 0.2);
+        background: var(--bg-primary);
+        margin-bottom: 30px;
+      }
+
+      .snake-loader .loading-text {
+        text-align: center;
+      }
+
+      .snake-loader .loading-text h2 {
+        font-size: 2rem;
+        margin: 0;
+        color: var(--primary);
+        animation: pulse 1.5s infinite;
+      }
+
+      .snake-loader .loading-text p {
+        margin: 8px 0 0;
+        opacity: 0.8;
+        color: var(--text-secondary);
+      }
+
+      .skip-loading {
+        margin-top: 20px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: var(--transition);
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+      }
+
+      .skip-loading:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(42, 74, 138, 0.3);
+      }
+
+      @keyframes pulse {
+        0% {
+          opacity: 0.8;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0.8;
+        }
+      }
+
+      /* ===== HEADER ===== */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background: var(--bg-secondary);
+        box-shadow: var(--shadow);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        letter-spacing: 1px;
+      }
+
+      .theme-toggle {
+        background: transparent;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-primary);
+        transition: transform 0.3s ease;
+        padding: 8px;
+      }
+
+      .theme-toggle:hover {
+        transform: scale(1.1);
+      }
+
+      /* ===== MAIN CONTENT ===== */
+      .main-content {
+        display: flex;
+        padding-top: 80px;
+        min-height: calc(100vh - 80px);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .main-content.show {
+        opacity: 1;
+      }
+
+      /* ===== PROJECT LIST (INDEX) ===== */
+      .project-list {
+        width: 320px;
+        padding: 20px;
+        background: var(--bg-secondary);
+        backdrop-filter: blur(10px);
+        border-right: var(--border);
+        overflow-y: auto;
+        height: calc(100vh - 80px);
+        transition: var(--transition);
+      }
+
+      .project-list h2 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        color: var(--text-primary);
+        font-weight: 600;
+        position: sticky;
+        top: 0;
+        background: var(--bg-secondary);
+        padding: 10px 0;
+      }
+
+      .project-item {
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: var(--transition);
+        background: transparent;
+      }
+
+      .project-item:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .project-item.selected {
+        background: rgba(42, 74, 138, 0.1);
+        border-left: 4px solid var(--primary);
+      }
+
+      .project-icon {
+        width: 45px;
+        height: 45px;
+        margin-right: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+        background: var(--tertiary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .project-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .project-item:hover .project-icon img {
+        transform: scale(1.1);
+      }
+
+      .project-info h3 {
+        font-size: 1rem;
+        margin: 0;
+        color: var(--text-primary);
+        font-weight: 500;
+      }
+
+      .project-info p {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        margin-top: 4px;
+      }
+
+      .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      .tech-tag {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 4px 8px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        color: var(--text-secondary);
+        transition: var(--transition);
+      }
+
+      .project-item:hover .tech-tag {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* ===== PROJECT DETAIL ===== */
+      .project-detail {
+        flex: 1;
+        padding: 40px;
+        background: var(--bg-secondary);
+        backdrop-filter: blur(10px);
+        overflow-y: auto;
+      }
+
+      .project-detail h2 {
+        font-size: 2.2rem;
+        margin: 0;
+        color: var(--text-primary);
+        font-weight: 600;
+      }
+
+      .project-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      .project-description {
+        margin: 30px 0;
+        line-height: 1.7;
+        color: var(--text-primary);
+        font-weight: 300;
+      }
+
+      .project-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .project-gallery img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .project-gallery img:hover {
+        transform: translateY(-5px);
+      }
+
+      .project-tech h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        color: var(--text-primary);
+        font-weight: 500;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 1024px) {
+        .project-list {
+          width: 280px;
+        }
+        .project-detail {
+          padding: 30px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .main-content {
+          flex-direction: column;
+        }
+
+        .project-list {
+          width: 100%;
+          border-right: none;
+          border-bottom: var(--border);
+          height: auto;
+          max-height: 250px;
+        }
+
+        .project-detail {
+          padding: 25px;
+        }
+
+        .project-gallery {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        header {
+          padding: 15px 20px;
+        }
+
+        .logo {
+          font-size: 1.2rem;
+        }
+
+        .project-list h2 {
+          font-size: 1.4rem;
+        }
+
+        .project-detail {
+          padding: 20px;
+        }
+
+        .project-detail h2 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- LOADING SCREEN (SERPENT) -->
+    <div class="snake-loader" id="snake-loader">
+      <canvas id="snake-canvas" width="450" height="450"></canvas>
+      <div class="loading-text">
+        <h2>Chargement...</h2>
+        <p>Le serpent explore ton portfolio !</p>
+        <button class="skip-loading" id="skip-loading">
+          Passer le chargement
+        </button>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header style="display: none">
+      <div class="logo">E. JEAN</div>
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Toggle dark mode"
+      >
+        ☀️
+      </button>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content" id="main-content">
+      <!-- PROJECT LIST (INDEX) -->
+      <aside class="project-list">
+        <h2>Mes Projets</h2>
+        <ul id="projects-list">
+          <!-- Généré par JavaScript -->
+        </ul>
+      </aside>
+
+      <!-- PROJECT DETAIL -->
+      <main class="project-detail">
+        <div id="project-detail-content">
+          <p
+            style="
+              text-align: center;
+              margin-top: 50%;
+              color: var(--text-secondary);
+              font-size: 1.1rem;
+            "
+          >
+            Sélectionne un projet pour voir les détails.
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // =============================================
+      // 1. JEU DU SERPENT (LOADING SCREEN) - VERSION CORRIGÉE
+      // =============================================
+      document.addEventListener("DOMContentLoaded", () => {
+        const canvas = document.getElementById("snake-canvas");
+        const ctx = canvas.getContext("2d");
+        const box = 20;
+        let snake = [{ x: 9 * box, y: 10 * box }];
+        let food = {
+          x: Math.floor(Math.random() * 20) * box,
+          y: Math.floor(Math.random() * 20) * box,
+        };
+        let direction = null;
+        let score = 0;
+        let game;
+        let timeout;
+
+        // Dessiner le serpent avec dégradé
+        const drawSnake = () => {
+          snake.forEach((segment, index) => {
+            const gradient = ctx.createLinearGradient(
+              segment.x,
+              segment.y,
+              segment.x + box,
+              segment.y + box,
+            );
+            gradient.addColorStop(0, index === 0 ? "#58a6ff" : "#79c0ff");
+            gradient.addColorStop(1, index === 0 ? "#2a4a8a" : "#58a6ff");
+            ctx.fillStyle = gradient;
+            ctx.fillRect(segment.x, segment.y, box, box);
+            ctx.strokeStyle = "#121212";
+            ctx.lineWidth = 1;
+            ctx.strokeRect(segment.x, segment.y, box, box);
+          });
+        };
+
+        // Dessiner la nourriture avec effet glow
+        const drawFood = () => {
+          ctx.shadowColor = "#d63a4a";
+          ctx.shadowBlur = 10;
+          ctx.fillStyle = "#d63a4a";
+          ctx.beginPath();
+          ctx.arc(food.x + box / 2, food.y + box / 2, box / 2, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        };
+
+        // Vérifier les collisions
+        const checkCollision = (head) => {
+          return (
+            snake.some(
+              (segment, index) =>
+                index !== 0 && segment.x === head.x && segment.y === head.y,
+            ) ||
+            head.x < 0 ||
+            head.x >= canvas.width ||
+            head.y < 0 ||
+            head.y >= canvas.height
+          );
+        };
+
+        // Mettre à jour le jeu
+        const updateGame = () => {
+          if (!direction) return;
+
+          const head = { x: snake[0].x, y: snake[0].y };
+
+          if (direction === "LEFT") head.x -= box;
+          if (direction === "UP") head.y -= box;
+          if (direction === "RIGHT") head.x += box;
+          if (direction === "DOWN") head.y += box;
+
+          if (checkCollision(head)) {
+            clearInterval(game);
+            clearTimeout(timeout);
+            endLoading();
+            return;
+          }
+
+          snake.unshift(head);
+
+          if (head.x === food.x && head.y === food.y) {
+            score++;
+            food = {
+              x: Math.floor(Math.random() * 20) * box,
+              y: Math.floor(Math.random() * 20) * box,
+            };
+          } else {
+            snake.pop();
+          }
+
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          drawSnake();
+          drawFood();
+        };
+
+        // Le serpent suit la souris
+        canvas.addEventListener("mousemove", (e) => {
+          const rect = canvas.getBoundingClientRect();
+          const mouseX = e.clientX - rect.left;
+          const mouseY = e.clientY - rect.top;
+
+          const dx = mouseX - snake[0].x;
+          const dy = mouseY - snake[0].y;
+          const angle = Math.atan2(dy, dx);
+
+          const newDirection = {
+            x: Math.round(Math.cos(angle) * box),
+            y: Math.round(Math.sin(angle) * box),
+          };
+
+          if (Math.abs(newDirection.x) > Math.abs(newDirection.y)) {
+            direction = newDirection.x > 0 ? "RIGHT" : "LEFT";
+          } else {
+            direction = newDirection.y > 0 ? "DOWN" : "UP";
+          }
+        });
+
+        // Initialiser le jeu
+        const initGame = () => {
+          ctx.fillStyle = "#121212";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          drawFood();
+          game = setInterval(updateGame, 150);
+        };
+
+        // Terminer le chargement (après 10 secondes ou collision)
+        const endLoading = () => {
+          clearInterval(game);
+          document.getElementById("snake-loader").style.opacity = "0";
+          setTimeout(() => {
+            document.getElementById("snake-loader").style.display = "none";
+            document.querySelector("header").style.display = "flex";
+            document.getElementById("main-content").classList.add("show");
+          }, 500);
+        };
+
+        // Bouton pour forcer le passage
+        document
+          .getElementById("skip-loading")
+          .addEventListener("click", endLoading);
+
+        // Timeout de sécurité (10 secondes)
+        timeout = setTimeout(endLoading, 10000);
+
+        initGame();
+
+        // =============================================
+        // 2. SYSTÈME INDEX/DÉTAIL
+        // =============================================
+        const projects = [
+          {
+            id: 1,
+            title: "E-commerce React & Laravel",
+            description:
+              "Développement d'une plateforme e-commerce complète avec gestion des produits, panier, paiement sécurisé (Stripe) et tableau de bord admin. Intégration d'une API REST avec Laravel et utilisation de React pour le frontend.",
+            date: "2023",
+            url: "#",
+            icon: "https://via.placeholder.com/45?text=🛒",
+            images: [
+              "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
+            ],
+            technologies: [
+              "React",
+              "Laravel",
+              "MySQL",
+              "Stripe",
+              "TailwindCSS",
+            ],
+          },
+          {
+            id: 2,
+            title: "Réseau Social d'Entreprise",
+            description:
+              "Application interne pour une entreprise avec fonctionnalités de posts, commentaires, messagerie instantanée et gestion des utilisateurs. Utilisation de WebSockets pour les notifications en temps réel.",
+            date: "2022",
+            url: "#",
+            icon: "https://via.placeholder.com/45?text=💬",
+            images: [
+              "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop",
+            ],
+            technologies: ["React", "Node.js", "MongoDB", "Socket.io", "JWT"],
+          },
+          {
+            id: 3,
+            title: "Portfolio Personnalisé",
+            description:
+              "Refonte de mon portfolio avec un système index/détail innovant, un jeu de chargement interactif (le serpent) et un design moderne. Développement en HTML/CSS/JS vanilla avec animations fluides.",
+            date: "2026",
+            url: "#",
+            icon: "https://via.placeholder.com/45?text=🖥️",
+            images: [
+              "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
+            ],
+            technologies: ["HTML5", "CSS3", "JavaScript", "Canvas API"],
+          },
+          {
+            id: 4,
+            title: "Dashboard Analytics",
+            description:
+              "Tableau de bord pour visualiser des données en temps réel avec des graphiques interactifs (D3.js), filtres dynamiques et export des données. Utilisation de Firebase pour le backend.",
+            date: "2024",
+            url: "#",
+            icon: "https://via.placeholder.com/45?text=📊",
+            images: [
+              "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop",
+            ],
+            technologies: ["D3.js", "Vue.js", "Firebase", "Chart.js"],
+          },
+          {
+            id: 5,
+            title: "Application de Gestion de Projets",
+            description:
+              "Outil collaboratif pour gérer des projets avec tableaux Kanban, assignation de tâches, suivi du temps et intégration avec GitHub. Développement avec Next.js et Supabase.",
+            date: "2025",
+            url: "#",
+            icon: "https://via.placeholder.com/45?text=📋",
+            images: [
+              "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop",
+            ],
+            technologies: ["Next.js", "Supabase", "TailwindCSS", "TypeScript"],
+          },
+        ];
+
+        // Générer la liste des projets
+        const projectsList = document.getElementById("projects-list");
+        projects.forEach((project) => {
+          const li = document.createElement("li");
+          li.className = "project-item";
+          li.innerHTML = `
+          <div class="project-icon">
+            <img src="${project.icon}" alt="${project.title}">
+          </div>
+          <div class="project-info">
+            <h3>${project.title}</h3>
+            <p>${project.date}</p>
+            <div class="tech-tags">
+              ${project.technologies
+                .slice(0, 3)
+                .map((tech) => `<span class="tech-tag">${tech}</span>`)
+                .join("")}
+              ${project.technologies.length > 3 ? `<span class="tech-tag">+${project.technologies.length - 3}</span>` : ""}
+            </div>
+          </div>
+        `;
+          li.addEventListener("click", () => {
+            // Mettre à jour la sélection
+            document.querySelectorAll(".project-item").forEach((item) => {
+              item.classList.remove("selected");
+            });
+            li.classList.add("selected");
+
+            // Afficher le détail
+            const detailContent = document.getElementById(
+              "project-detail-content",
+            );
+            detailContent.innerHTML = `
+            <div class="project-header">
+              <h2>${project.title}</h2>
+              <div class="project-meta">
+                <span>${project.date}</span>
+                <a href="${project.url}" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none; font-weight: 500;">Voir le projet →</a>
+              </div>
+            </div>
+            <div class="project-description">
+              <p>${project.description}</p>
+            </div>
+            <div class="project-gallery">
+              ${project.images.map((img) => `<img src="${img}" alt="${project.title}" loading="lazy">`).join("")}
+            </div>
+            <div class="project-tech">
+              <h3>Technologies utilisées</h3>
+              <div class="tech-tags">
+                ${project.technologies.map((tech) => `<span class="tech-tag">${tech}</span>`).join("")}
+              </div>
+            </div>
+          `;
+          });
+          projectsList.appendChild(li);
+        });
+
+        // Sélectionner le premier projet par défaut
+        setTimeout(() => {
+          document.querySelector(".project-item").click();
+        }, 100);
+
+        // =============================================
+        // 3. DARKMODE/LIGHTMODE
+        // =============================================
+        const themeToggle = document.getElementById("theme-toggle");
+        const savedTheme = localStorage.getItem("theme") || "light";
+
+        if (savedTheme === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+          themeToggle.textContent = "🌙";
+        }
+
+        themeToggle.addEventListener("click", () => {
+          const newTheme =
+            document.documentElement.getAttribute("data-theme") === "dark"
+              ? "light"
+              : "dark";
+          document.documentElement.setAttribute("data-theme", newTheme);
+          localStorage.setItem("theme", newTheme);
+          themeToggle.textContent = newTheme === "dark" ? "🌙" : "☀️";
+        });
+      });
+    </script>
+  </body>
+</html>

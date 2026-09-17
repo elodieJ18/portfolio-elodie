@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Élodie Jean — Creative Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #f3f0e9;
+        --surface: #ffffff;
+        --surface-2: #e8e4dc;
+        --text: #17191f;
+        --muted: #777c87;
+        --border: rgba(23, 25, 31, 0.14);
+        --grid: rgba(23, 25, 31, 0.08);
+
+        --blue: #607bd2;
+        --coral: #df5961;
+        --mint: #78bba9;
+        --yellow: #e5bd5f;
+      }
+
+      [data-theme="dark"] {
+        --bg: #101218;
+        --surface: #181c25;
+        --surface-2: #232936;
+        --text: #f3f0e9;
+        --muted: #969daa;
+        --border: rgba(255, 255, 255, 0.13);
+        --grid: rgba(255, 255, 255, 0.07);
+
+        --blue: #7892e5;
+        --coral: #eb6570;
+        --mint: #9dd1c0;
+        --yellow: #e8c56a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--text);
+        background:
+          radial-gradient(
+            circle at 80% 10%,
+            rgba(96, 123, 210, 0.18),
+            transparent 30rem
+          ),
+          var(--bg);
+        font-family: "Manrope", sans-serif;
+        transition:
+          background 0.4s ease,
+          color 0.4s ease;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.5;
+        background-image:
+          linear-gradient(var(--grid) 1px, transparent 1px),
+          linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+        background-size: 42px 42px;
+        mask-image: linear-gradient(to bottom, black, transparent 80%);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .mono {
+        font-family: "DM Mono", monospace;
+      }
+
+      .container {
+        width: min(1160px, calc(100% - 40px));
+        margin: auto;
+      }
+
+      /* Loader */
+
+      .loader {
+        position: fixed;
+        z-index: 20;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 20px;
+        background: var(--bg);
+        transition:
+          opacity 0.7s ease,
+          visibility 0.7s ease;
+      }
+
+      .loader.hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .loader-box {
+        width: min(650px, 100%);
+      }
+
+      .loader-top,
+      .loader-bottom {
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font:
+          12px "DM Mono",
+          monospace;
+        margin: 0 4px 14px;
+      }
+
+      .loader-bottom {
+        margin: 14px 4px 0;
+      }
+
+      .snake-stage {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1.65;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        background:
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(96, 123, 210, 0.13),
+            transparent 45%
+          ),
+          var(--surface);
+        background-image:
+          linear-gradient(var(--grid) 1px, transparent 1px),
+          linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+        background-size: 30px 30px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.16);
+      }
+
+      .snake-stage::after {
+        content: "< React />   useState()   render()";
+        position: absolute;
+        right: 20px;
+        bottom: 16px;
+        color: var(--muted);
+        opacity: 0.7;
+        font:
+          11px "DM Mono",
+          monospace;
+      }
+
+      .snake-part {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 6px;
+        background: var(--mint);
+        box-shadow: 0 0 15px rgba(157, 209, 192, 0.7);
+        transform: translate(-50%, -50%);
+        transition:
+          left 0.16s linear,
+          top 0.16s linear;
+      }
+
+      .snake-part.head {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: var(--blue);
+        box-shadow:
+          0 0 0 5px rgba(120, 146, 229, 0.15),
+          0 0 28px var(--blue);
+      }
+
+      .food {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--coral);
+        box-shadow: 0 0 20px var(--coral);
+        transform: translate(-50%, -50%);
+        animation: pulse 1.3s infinite ease-in-out;
+      }
+
+      @keyframes pulse {
+        50% {
+          transform: translate(-50%, -50%) scale(1.4);
+        }
+      }
+
+      /* Navigation */
+
+      header {
+        position: relative;
+        z-index: 2;
+        width: min(1160px, calc(100% - 40px));
+        margin: auto;
+        padding: 26px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        display: flex;
+        gap: 11px;
+        align-items: center;
+        font-weight: 800;
+      }
+
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        color: white;
+        border-radius: 10px;
+        background: var(--blue);
+        font:
+          13px "DM Mono",
+          monospace;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        color: var(--muted);
+        font:
+          12px "DM Mono",
+          monospace;
+      }
+
+      nav a:hover {
+        color: var(--blue);
+      }
+
+      .theme-toggle {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 9px 13px;
+        color: var(--text);
+        background: var(--surface);
+      }
+
+      /* Hero */
+
+      .hero {
+        position: relative;
+        z-index: 1;
+        min-height: 640px;
+        display: grid;
+        align-items: center;
+        padding: 100px 0 130px;
+      }
+
+      .hero-content {
+        width: min(760px, 100%);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        gap: 10px;
+        color: var(--mint);
+        font:
+          13px "DM Mono",
+          monospace;
+      }
+
+      .eyebrow::before {
+        content: "●";
+        color: var(--coral);
+      }
+
+      h1 {
+        max-width: 850px;
+        margin: 22px 0;
+        font-size: clamp(52px, 9vw, 112px);
+        line-height: 0.96;
+        letter-spacing: -0.08em;
+      }
+
+      h1 span {
+        color: var(--blue);
+      }
+
+      .hero p {
+        max-width: 570px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 999px;
+        padding: 13px 18px;
+        font:
+          13px "DM Mono",
+          monospace;
+      }
+
+      .button-primary {
+        color: white;
+        background: var(--blue);
+      }
+
+      .button-secondary {
+        border: 1px solid var(--border);
+        background: var(--surface);
+      }
+
+      /* Projects */
+
+      section {
+        position: relative;
+        z-index: 1;
+        padding: 100px 0;
+      }
+
+      .section-label {
+        margin-bottom: 32px;
+        color: var(--muted);
+        font:
+          13px "DM Mono",
+          monospace;
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 28px;
+      }
+
+      .project-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .project-item {
+        border: 1px solid transparent;
+        border-radius: 14px;
+        padding: 15px;
+        color: var(--muted);
+        background: transparent;
+        text-align: left;
+      }
+
+      .project-item:hover,
+      .project-item.active {
+        border-color: var(--border);
+        color: var(--text);
+        background: var(--surface);
+      }
+
+      .project-item small {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--coral);
+        font:
+          11px "DM Mono",
+          monospace;
+      }
+
+      .project-item strong {
+        font-size: 15px;
+      }
+
+      .project-detail {
+        min-height: 380px;
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 28px;
+        background: var(--surface);
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.08);
+      }
+
+      .preview {
+        display: grid;
+        place-items: center;
+        height: 190px;
+        margin-bottom: 28px;
+        border-radius: 17px;
+        background: linear-gradient(135deg, var(--blue), #222b52);
+        color: white;
+        font:
+          25px "DM Mono",
+          monospace;
+      }
+
+      .project-detail h2 {
+        margin: 0 0 12px;
+        font-size: 32px;
+      }
+
+      .project-detail p {
+        max-width: 600px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 22px;
+      }
+
+      .tag {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 7px 10px;
+        color: var(--mint);
+        font:
+          11px "DM Mono",
+          monospace;
+      }
+
+      footer {
+        position: relative;
+        z-index: 1;
+        padding: 35px 0;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font:
+          12px "DM Mono",
+          monospace;
+      }
+
+      @media (max-width: 700px) {
+        header {
+          align-items: flex-start;
+        }
+
+        nav a {
+          display: none;
+        }
+
+        .hero {
+          min-height: 560px;
+          padding: 70px 0;
+        }
+
+        .hero p {
+          font-size: 16px;
+        }
+
+        .hero-actions {
+          flex-wrap: wrap;
+        }
+
+        .projects {
+          grid-template-columns: 1fr;
+        }
+
+        .project-list {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .project-item {
+          padding: 10px;
+        }
+
+        .project-item strong {
+          font-size: 12px;
+        }
+
+        .project-detail {
+          padding: 18px;
+        }
+
+        .preview {
+          height: 150px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Loader Snake -->
+    <div class="loader" id="loader">
+      <div class="loader-box">
+        <div class="loader-top">
+          <span>booting portfolio...</span>
+          <span id="score">000</span>
+        </div>
+
+        <div class="snake-stage" id="snakeStage">
+          <div class="food" id="food"></div>
+        </div>
+
+        <div class="loader-bottom">
+          <span>loading components...</span>
+          <span>React / Vite</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <header>
+      <a href="#" class="brand">
+        <span class="brand-mark">EJ</span>
+        <span>< ElodieJean /></span>
+      </a>
+
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle">☀ Light mode</button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero container" id="about">
+        <div class="hero-content">
+          <div class="eyebrow">creative front-end developer</div>
+
+          <h1>
+            Designing digital
+            <span>experiences.</span>
+          </h1>
+
+          <p>
+            Je crée des interfaces sensibles, accessibles et vivantes, entre
+            direction artistique, design d’interface et développement React.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#work" class="button button-primary">Voir mes projets ↘</a>
+            <a href="#contact" class="button button-secondary">Me contacter</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="container" id="work">
+        <div class="section-label">// selected work</div>
+
+        <div class="projects">
+          <div class="project-list">
+            <button class="project-item active" data-project="0">
+              <small>01 / 04</small>
+              <strong>Portfolio personnel</strong>
+            </button>
+
+            <button class="project-item" data-project="1">
+              <small>02 / 04</small>
+              <strong>Application météo</strong>
+            </button>
+
+            <button class="project-item" data-project="2">
+              <small>03 / 04</small>
+              <strong>Réseau social</strong>
+            </button>
+
+            <button class="project-item" data-project="3">
+              <small>04 / 04</small>
+              <strong>Identité digitale</strong>
+            </button>
+          </div>
+
+          <article class="project-detail">
+            <div class="preview" id="preview">
+              <span id="previewText">< portfolio /></span>
+            </div>
+
+            <h2 id="projectTitle">Portfolio personnel</h2>
+
+            <p id="projectDescription">
+              Une interface personnelle inspirée d’un environnement de
+              développement, pensée pour présenter mon parcours et mes projets.
+            </p>
+
+            <div class="tags" id="tags">
+              <span class="tag">React</span>
+              <span class="tag">Vite</span>
+              <span class="tag">SCSS</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="container" id="contact">
+        <div class="section-label">// contact</div>
+        <h2>
+          Construisons quelque chose<br /><span style="color: var(--blue)"
+            >d’intéressant.</span
+          >
+        </h2>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        © 2026 Élodie Jean — Built with React, curiosity & coffee.
+      </div>
+    </footer>
+
+    <script>
+      /* Dark mode / Light mode */
+
+      const html = document.documentElement;
+      const themeToggle = document.getElementById("themeToggle");
+
+      const savedTheme = localStorage.getItem("theme") || "dark";
+      html.dataset.theme = savedTheme;
+
+      function updateThemeButton() {
+        themeToggle.textContent =
+          html.dataset.theme === "dark" ? "☀ Light mode" : "☾ Dark mode";
+      }
+
+      updateThemeButton();
+
+      themeToggle.addEventListener("click", () => {
+        html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
+
+        localStorage.setItem("theme", html.dataset.theme);
+        updateThemeButton();
+      });
+
+      /* Animation Snake */
+
+      const stage = document.getElementById("snakeStage");
+      const foodElement = document.getElementById("food");
+      const scoreElement = document.getElementById("score");
+
+      const columns = 24;
+      const rows = 14;
+
+      let snake = [
+        { x: 7, y: 7 },
+        { x: 6, y: 7 },
+        { x: 5, y: 7 },
+        { x: 4, y: 7 },
+      ];
+
+      let food = { x: 15, y: 7 };
+      let direction = { x: 1, y: 0 };
+      let score = 0;
+
+      function position(element, point) {
+        element.style.left = `${((point.x + 0.5) / columns) * 100}%`;
+        element.style.top = `${((point.y + 0.5) / rows) * 100}%`;
+      }
+
+      function renderSnake() {
+        document.querySelectorAll(".snake-part").forEach((el) => el.remove());
+
+        snake.forEach((part, index) => {
+          const element = document.createElement("span");
+          element.className = "snake-part";
+
+          if (index === 0) {
+            element.classList.add("head");
+          }
+
+          position(element, part);
+          stage.appendChild(element);
+        });
+
+        position(foodElement, food);
+        scoreElement.textContent = String(score).padStart(3, "0");
+      }
+
+      function moveSnake() {
+        const head = snake[0];
+
+        const nextHead = {
+          x: (head.x + direction.x + columns) % columns,
+          y: (head.y + direction.y + rows) % rows,
+        };
+
+        const ateFood = nextHead.x === food.x && nextHead.y === food.y;
+
+        snake.unshift(nextHead);
+
+        if (ateFood) {
+          score += 10;
+          food = {
+            x: Math.floor(Math.random() * columns),
+            y: Math.floor(Math.random() * rows),
+          };
+        } else {
+          snake.pop();
+        }
+
+        renderSnake();
+      }
+
+      renderSnake();
+      const snakeInterval = setInterval(moveSnake, 170);
+
+      setTimeout(() => {
+        clearInterval(snakeInterval);
+        document.getElementById("loader").classList.add("hidden");
+      }, 3600);
+
+      /* Projets */
+
+      const projects = [
+        {
+          title: "Portfolio personnel",
+          description:
+            "Une interface personnelle inspirée d’un environnement de développement.",
+          preview: "< portfolio />",
+          color: "linear-gradient(135deg, #607bd2, #242d5a)",
+          tags: ["React", "Vite", "SCSS"],
+        },
+        {
+          title: "Application météo",
+          description:
+            "Une application météo claire et animée utilisant une API externe.",
+          preview: "weather.app",
+          color: "linear-gradient(135deg, #78bba9, #254a4b)",
+          tags: ["JavaScript", "API", "UX/UI"],
+        },
+        {
+          title: "Réseau social",
+          description:
+            "Une interface de réseau social avec authentification et gestion des utilisateurs.",
+          preview: "{ users }",
+          color: "linear-gradient(135deg, #df5961, #552b39)",
+          tags: ["React", "Node.js", "MongoDB"],
+        },
+        {
+          title: "Identité digitale",
+          description:
+            "Une direction artistique digitale pour une marque créative.",
+          preview: "brand.system",
+          color: "linear-gradient(135deg, #e5bd5f, #614b2b)",
+          tags: ["Figma", "Branding", "Design"],
+        },
+      ];
+
+      const projectItems = document.querySelectorAll(".project-item");
+      const title = document.getElementById("projectTitle");
+      const description = document.getElementById("projectDescription");
+      const preview = document.getElementById("preview");
+      const previewText = document.getElementById("previewText");
+      const tags = document.getElementById("tags");
+
+      projectItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const project = projects[item.dataset.project];
+
+          projectItems.forEach((button) => button.classList.remove("active"));
+          item.classList.add("active");
+
+          title.textContent = project.title;
+          description.textContent = project.description;
+          previewText.textContent = project.preview;
+          preview.style.background = project.color;
+
+          tags.innerHTML = project.tags
+            .map((tag) => `<span class="tag">${tag}</span>`)
+            .join("");
+        });
+      });
+    </script>
+  </body>
+</html>

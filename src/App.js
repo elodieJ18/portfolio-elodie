@@ -1,26 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import Route from './components/Route';
-import './App.css';
-import Loader from './components/Loader';
-
+import React, { useState, useEffect } from "react";
+import Route from "./mains";
+import "./css/styles.css";
+import Loader from "./components/Loader";
 
 function App() {
-
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       setLoader(false);
-    }, 1500)
-  }, [])
+    }, 1500);
+  }, []);
 
   return loader ? (
-    <Loader/>
-  ):
-  (
+    <Loader />
+  ) : (
     <div className="App">
-     <Route/>
-     
+      <Route />
     </div>
   );
 }
